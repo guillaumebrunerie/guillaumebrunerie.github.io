@@ -1,0 +1,255 @@
+body {
+    background-color: lightgray;
+    font-family:"Open Sans", sans, serif;
+    margin:0;
+}
+
+#main {
+    max-width:60em;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 0;
+    padding:2em;
+    padding-top:0;
+    padding-bottom:0;
+    background-color:white;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 1vh;
+}
+
+figure {
+    margin: 0;
+}
+
+section {
+    min-height:100vh;
+    margin-bottom:-3em;
+}
+
+section:last-child {
+    min-height:99vh;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #222;
+    border-style:solid;
+    border-width: 0px;
+    border-bottom-width: 2px;
+    padding-top:2em;
+    margin-top:0;
+}
+
+h2 {
+    font-weight:bold;
+    color:#444;
+    text-shadow: 0px 0px 1px #888;
+}
+
+h3 {
+    font-weight:bold;
+    color:#555;
+    text-shadow: 0px 0px 1px #AAA;
+}
+
+p {
+    margin-top: 1em;
+    margin-bottom:0.5em;
+}
+
+#main ul {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 0.5em;
+    list-style: none;
+}
+#main ul li:before {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: solid transparent;
+    border-bottom: solid transparent;
+    border-left: solid black;
+    border-width: 5px 10px;
+    content: ' ';
+    margin-right: 15px;  /* moves only the content of the first line */
+    margin-left: -25px;  /* moves the whole first line */
+}
+
+#main ul li {
+    padding-left: 26px; /* moves everything*/
+    padding-bottom: 10px;
+}
+
+#main a:link {
+    text-decoration: none;
+}
+
+#main a {
+    color: blue;
+}
+
+#main a:hover {
+    text-shadow: 0px 0px 3px #44F;
+}
+
+#main a.secondarylink {
+    color: #050;
+}
+
+#main a.secondarylink:hover {
+    text-shadow: 0px 0px 3px #020;
+}
+
+#main img {
+    width: 150px;
+    float: right;
+    padding:1em;
+    padding-top:0;
+    padding-right:0;
+}
+
+header {
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    max-width:64em;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0px 0px 5px black;
+    background-color: #DDD;
+}
+
+#logo {
+    position:relative;
+    float: left;
+    padding-left: 1em;
+    font-family:"Pacifico";
+    color:black;
+    font-size:1.5em;
+    line-height:2em;
+    background-color: #DDD;
+    border-radius: 0 0 0 10px;
+}
+
+#logo p {
+    padding:0;
+    margin:0;
+}
+
+#logo a:link, #logo a:visited {
+    padding: 0;
+    margin:0;
+    text-decoration: none;
+    color:black;
+}
+
+#navbar {
+    float: right;
+}
+
+#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar li {
+    float: left;
+}
+
+#navbar li a {
+    display: block;
+    text-align: center;
+    padding: 0 2em;
+    line-height:3em;
+    font-weight: bold;
+}
+
+#navbar ul li:last-child {
+    border-radius: 0 0 10px 0;
+}
+
+#navbar li:nth-child(odd) {
+    background-color: #BBB;
+}
+
+#navbar li:nth-child(even) {
+    background-color: #DDD;
+}
+
+header a:link, #navbar a:visited {
+    text-decoration: none;
+    color: #222;
+}
+
+header a:hover {
+    text-shadow: 0px 0px 10px #444;
+}
+
+#backtotop {
+    display: none;
+}
+
+@media (max-width: 64em) {
+    header {
+        position: relative;
+        border-radius: 0 0 0 0;
+        box-shadow: 0px 0px 0px black;
+    }
+
+    #main {
+        box-shadow: 0 0 0;
+        border-radius: 0;
+        margin-bottom:0;
+    }
+
+    h1 {
+        padding-top: 0.5em;
+    }
+
+    section {
+        min-height:100vh;
+        margin-bottom:0;
+    }
+
+    #logo {
+        display:inline-block;
+        float:none;
+        text-align:center;
+        padding-left:0;
+        width:100%;
+    }
+
+    #navbar {
+        float: none;
+        position: relative;
+    }
+
+    #backtotop {
+        display:block;
+        position:fixed;
+        width:3em;
+        height:3em;
+        right:0;
+        top:0;
+    }
+
+    #backtotop a {
+        display: block;
+        text-align: center;
+        padding: 0;
+        font-size:1.5em;
+        line-height:2em;
+        background-color: #DDD;
+        color:black;
+    }
+
+    #navbar li {
+        float:none;
+    }
+}
