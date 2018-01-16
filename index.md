@@ -57,10 +57,11 @@ Publications
 
 * [*The James construction and $\pi_4(\mathbb{S}^3)$ in homotopy type theory*](https://arxiv.org/abs/1710.10307).
   Guillaume Brunerie.
-  Journal of Automated Reasoning, Special Issue on Homotopy Type Theory and Univalent Foundations,
+  Journal of Automated Reasoning, Springer, Special Issue on Homotopy Type Theory and Univalent Foundations,
   accepted for publication.
 * [*A Cubical Approach to Synthetic Homotopy Theory*](pdf/lb15cubicalsynth.pdf). Dan Licata and
-  Guillaume Brunerie. Logic in Computer Science (LICS 2015), pages 92–103, IEEE.
+  Guillaume Brunerie. 2015 30th Annual ACM/IEEE Symposium on Logic in Computer Science (LICS 2015),
+  pages 92–103, IEEE.
   [doi:10.1109/LICS.2015.19](https://doi.org/10.1109/LICS.2015.19){.secondarylink}.
 * [*$\pi_n(S^n)$ in Homotopy Type Theory*](pdf/lb13cpp.pdf). Dan Licata and Guillaume Brunerie.
   Certified Programs and Proofs (CPP 2013), volume 8307 of Lecture Notes in Computer Science (LNCS),
@@ -82,7 +83,8 @@ Slides of talks
 ---------------
 
 * [*Experiments in cubical type theory*](pdf/cubicalexperiments.pdf), Joint Mathematics
-  Meetings, San Diego, California, January 2018
+  Meetings, AMS Special Session on Homotopy Type Theory (a Mathematics Research Communities
+  Session), San Diego, California, January 2018
 * [*Homotopy type theory: working invariantly in homotopy theory*](pdf/shorttalk2.pdf), Short talks
   by postdoctoral members, School of Mathematics, IAS, Princeton, New Jersey, September 2017
 * [*Invariant homotopy theory in the univalent foundations*](pdf/shorttalk.pdf), Short talks by
