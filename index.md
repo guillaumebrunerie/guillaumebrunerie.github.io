@@ -50,7 +50,7 @@ thesis on June 15th 2016.
 
 * [*On the homotopy groups of spheres in homotopy type theory*](https://arxiv.org/abs/1606.05916)
   (187 pages, in English, with a 20-page summary in French at the end). You can
-  also download the [slides of the oral presentation](pdf/soutenance.pdf) (in French).
+  also download the [slides of the oral presentation](pdf/soutenance.pdf).
 
 Publications
 ------------
