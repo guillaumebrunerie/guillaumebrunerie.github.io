@@ -57,8 +57,7 @@ Publications
 
 * [*The James construction and $\pi_4(\mathbb{S}^3)$ in homotopy type theory*](https://arxiv.org/abs/1710.10307).
   Guillaume Brunerie.
-  Journal of Automated Reasoning, Special Issue on Homotopy Type Theory and Univalent Foundations, Springer
-  accepted for publication.
+  Journal of Automated Reasoning, Special Issue on Homotopy Type Theory and Univalent Foundations, Springer, accepted for publication.
 * [*A Cubical Approach to Synthetic Homotopy Theory*](pdf/lb15cubicalsynth.pdf). Dan Licata and
   Guillaume Brunerie. 2015 30th Annual ACM/IEEE Symposium on Logic in Computer Science (LICS 2015),
   pages 92–103, IEEE.
