@@ -28,7 +28,7 @@ I am currently a postdoctoral member of the
 [Institute for Advanced Study](https://www.ias.edu){.secondarylink} in Princeton, New Jersey, until
 the spring 2018.
 
-<small>(last updated in January 2018)</small>
+<small>(last updated in February 2018)</small>
 </section>
 
 <section>
@@ -57,7 +57,7 @@ Publications
 
 * [*The James construction and $\pi_4(\mathbb{S}^3)$ in homotopy type theory*](https://arxiv.org/abs/1710.10307).
   Guillaume Brunerie.
-  Journal of Automated Reasoning, Springer, Special Issue on Homotopy Type Theory and Univalent Foundations,
+  Journal of Automated Reasoning, Special Issue on Homotopy Type Theory and Univalent Foundations, Springer
   accepted for publication.
 * [*A Cubical Approach to Synthetic Homotopy Theory*](pdf/lb15cubicalsynth.pdf). Dan Licata and
   Guillaume Brunerie. 2015 30th Annual ACM/IEEE Symposium on Logic in Computer Science (LICS 2015),
@@ -128,14 +128,15 @@ Videos of talks
 Others writings
 ---------------
 
-- A [poster](pdf/poster.pdf) (in French, 2015) on homotopy type theory.
+- A [poster](pdf/poster.pdf) on homotopy type theory (in French, 2015).
 - A Python script generating Agda code for semi-simplicial types, truncated at any given
   level ([script](other/semisimplicial.py), [result for $n=10$](other/semisimplicial10.txt))
-- [*Structure topologique de l’espace des réseaux unitaires*](pdf/TIPEvENS.pdf) (in French, 2009), initiation to research on the proof that the space of unitary lattices of $\mathbb{R}^2$
-  is homemorphic to the complement of the trefoil knot in $S^3$.
-- [*Densdisigeblaj spacoj*](pdf/densdisigeblajspacoj.pdf) (in Esperanto, 2008), a proof
-  of a theorem in point-set topology: every metric space without isolated points can be partitioned
-  in two dense subspaces.
+- [*Structure topologique de l’espace des réseaux unitaires*](pdf/TIPEvENS.pdf), initiation to
+  research on the proof that the space of unitary lattices of $\mathbb{R}^2$ is homemorphic to the
+  complement of the trefoil knot in $S^3$ (in French, 2009).
+- [*Densdisigeblaj spacoj*](pdf/densdisigeblajspacoj.pdf), a proof of a theorem in point-set
+  topology: every metric space without isolated points can be partitioned in two dense subspaces (in
+  Esperanto, 2008).
 
 <section>
 Other interests
