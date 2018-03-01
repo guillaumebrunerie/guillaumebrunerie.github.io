@@ -25,10 +25,9 @@ theory, logic, and proof assistants).
 
 I am currently a postdoctoral member of the
 [School of Mathematics](https://www.math.ias.edu/){.secondarylink} of the
-[Institute for Advanced Study](https://www.ias.edu){.secondarylink} in Princeton, New Jersey, until
-the spring 2018.
+[Institute for Advanced Study](https://www.ias.edu){.secondarylink} in Princeton, New Jersey.
 
-<small>(last updated in February 2018)</small>
+<small>(last updated in March 2018)</small>
 </section>
 
 <section>
