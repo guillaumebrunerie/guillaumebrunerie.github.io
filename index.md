@@ -27,7 +27,7 @@ I am currently a postdoctoral member of the
 [School of Mathematics](https://www.math.ias.edu/){.secondarylink} of the
 [Institute for Advanced Study](https://www.ias.edu){.secondarylink} in Princeton, New Jersey.
 
-<small>(last updated in March 2018)</small>
+<small>(last updated in April 2018)</small>
 </section>
 
 <section>
@@ -80,6 +80,8 @@ Preprints and other writings of interest
 Slides of talks
 ---------------
 
+* [*Computer-generated proofs for the smash product*](pdf/smashproduct.pdf), MURI Team Meeting,
+  Carnegie Mellon University, Pittsburgh, Pennsylvania, March 2018
 * [*Experiments in cubical type theory*](pdf/cubicalexperiments.pdf), Joint Mathematics
   Meetings, AMS Special Session on Homotopy Type Theory (a Mathematics Research Communities
   Session), San Diego, California, January 2018
