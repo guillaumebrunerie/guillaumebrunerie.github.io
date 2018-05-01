@@ -23,11 +23,15 @@ mainly in *homotopy type theory*, a field combining mathematics (in particular h
 category theory, and constructive mathematics) and theoretical computer science (in particular type
 theory, logic, and proof assistants).
 
-I am currently a postdoctoral member of the
+I am currently travelling around Europe, and I will start a postdoc in the
+[Logic Group](https://www.su.se/english/research/2.19150/logic-group){.secondarylink} of
+[Stockholm University](https://www.su.se/english/) in September.
+
+Previously, I was a postdoctoral member of the
 [School of Mathematics](https://www.math.ias.edu/){.secondarylink} of the
 [Institute for Advanced Study](https://www.ias.edu){.secondarylink} in Princeton, New Jersey.
 
-<small>(last updated in April 2018)</small>
+<small>(last updated in May 2018)</small>
 </section>
 
 <section>
