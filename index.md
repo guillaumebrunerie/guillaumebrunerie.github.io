@@ -25,7 +25,7 @@ theory, logic, and proof assistants).
 
 I am currently travelling around Europe, and I will start a postdoc in the
 [Logic Group](https://www.su.se/english/research/2.19150/logic-group){.secondarylink} of
-[Stockholm University](https://www.su.se/english/) in September.
+[Stockholm University](https://www.su.se/english/){.secondarylink} in September.
 
 Previously, I was a postdoctoral member of the
 [School of Mathematics](https://www.math.ias.edu/){.secondarylink} of the
