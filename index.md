@@ -18,7 +18,7 @@ About me
 
 ![](picture.jpg)
 
-My name is Guillaume Brunerie and I’m a researcher in mathematics and in computer science working
+My name is Guillaume Brunerie and I’m a researcher in mathematics and computer science working
 mainly in *homotopy type theory*, a field combining mathematics (in particular homotopy theory,
 category theory, and constructive mathematics) and theoretical computer science (in particular type
 theory, logic, and proof assistants).
@@ -31,7 +31,7 @@ Previously, I was a postdoctoral member of the
 [School of Mathematics](https://www.math.ias.edu/){.secondarylink} of the
 [Institute for Advanced Study](https://www.ias.edu){.secondarylink} in Princeton, New Jersey.
 
-<small>(last updated in September 2018)</small>
+<small>(last updated in October 2018)</small>
 </section>
 
 <section>
@@ -41,7 +41,7 @@ Curriculum Vitae, papers and talks
 CV
 --
 
-You can find my CV [here](pdf/cv.pdf).
+You can find my full CV [here](pdf/cv.pdf).
 
 PhD thesis
 ----------
