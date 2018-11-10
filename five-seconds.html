@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<title>Five Seconds</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="../style.css" type="text/css">
+
+<script type="text/javascript" src="love-webplayer/js/lua-parser.js"		></script>
+<script type="text/javascript" src="love-webplayer/js/lua-parser-utils.js"	></script>
+<script type="text/javascript" src="love-webplayer/js/gamepad.js"      ></script>
+<script type="text/javascript" src="love-webplayer/js/jquery.js"      ></script>
+<script type="text/javascript" src="love-webplayer/js/jquery.hotkeys.js"      ></script>
+<script type="text/javascript" src="love-webplayer/js/utils.js"			></script>
+<script type="text/javascript" src="love-webplayer/js/utils.webgl.js"		></script>
+<script type="text/javascript" src="love-webplayer/js/love.render.js"		></script>
+<script type="text/javascript" src="love-webplayer/js/main.js"			></script>
+
+<script type="text/javascript" src="love-webplayer/js/love.audio.js"		></script>
+<script type="text/javascript" src="love-webplayer/js/love.event.js"		></script>
+<script type="text/javascript" src="love-webplayer/js/love.filesystem.js"	></script>
+<script type="text/javascript" src="love-webplayer/js/love.font.js"		></script>
+<script type="text/javascript" src="love-webplayer/js/love.graphics.js"	></script>
+<script type="text/javascript" src="love-webplayer/js/love.image.js"		></script>
+<script type="text/javascript" src="love-webplayer/js/love.joystick.js"	></script>
+<script type="text/javascript" src="love-webplayer/js/love.keyboard.js"	></script>
+<script type="text/javascript" src="love-webplayer/js/love.mouse.js"		></script>
+<script type="text/javascript" src="love-webplayer/js/Box2dWeb-2.1.a.3.min.js"	></script>
+<script type="text/javascript" src="love-webplayer/js/love.physics.js"	></script>
+<script type="text/javascript" src="love-webplayer/js/love.sound.js"		></script>
+<script type="text/javascript" src="love-webplayer/js/love.thread.js"		></script>
+<script type="text/javascript" src="love-webplayer/js/love.timer.js"		></script>
+
+<script type="text/javascript">gShaderCode_Fragment = LoadShaderCode("love-webplayer/js/fragment.shader");</script>
+<script type="text/javascript">gShaderCode_Vertex   = LoadShaderCode("love-webplayer/js/vertex.shader");</script>
+
+</head>
+<body onload="MainOnLoad([
+'Images/10s.png',
+'Images/background.png',
+'Images/box.png',
+'Images/bullet.png',
+'Images/bullet.xcf',
+'Images/clock.png',
+'Images/empty_gauge.png',
+'Images/enemy.png',
+'Images/fired_bullet.png',
+'Images/fired_bullet.xcf',
+'Images/full_gauge.png',
+'Images/killed.png',
+'Images/limit_gauge.png',
+'Images/loading.png',
+'Images/mega_won.png',
+'Images/player.png',
+'Images/space.png',
+'Images/splash0.png',
+'Images/splash1.png',
+'Images/splash2.png',
+'Images/splash3.png',
+'Images/splash4.png',
+'Images/splash5.png',
+'Images/super_clock.png',
+'Images/timeout.png',
+'Images/won.png'
+])">
+<a href="https://github.com/ghoulsblade/love-webplayer">Love2D-Webplayer</a><br>
+<canvas id="glcanvas" width="800" height="600">  
+Your browser doesn't appear to support the HTML5 <code>&lt;canvas&gt;</code> element.  
+</canvas>
+<div id="output" style="font-family: Courier New,Courier,monospace;"></div>
+</body></html>
