@@ -31,7 +31,7 @@ Previously, I was a postdoctoral member of the
 [School of Mathematics](https://www.math.ias.edu/){.secondarylink} of the
 [Institute for Advanced Study](https://www.ias.edu){.secondarylink} in Princeton, New Jersey.
 
-<small>(last updated in November 2018)</small>
+<small>(last updated in December 2018)</small>
 </section>
 
 <section>
@@ -84,8 +84,8 @@ Preprints and other writings of interest
 Slides of talks
 ---------------
 
-* [*Computer-generated proofs for the smash product*](pdf/smashproduct.pdf), MURI Team Meeting,
-  Carnegie Mellon University, Pittsburgh, Pennsylvania, March 2018
+* [*Computer-generated proofs for the monoidal structure of the smash product*](pdf/monoidalsmashproduct.pdf),
+  HoTTEST Seminar, November 2018
 * [*Experiments in cubical type theory*](pdf/cubicalexperiments.pdf), Joint Mathematics
   Meetings, AMS Special Session on Homotopy Type Theory (a Mathematics Research Communities
   Session), San Diego, California, January 2018
@@ -110,13 +110,15 @@ Slides of talks
 Videos of talks
 ---------------
 
+* [*Computer-generated proofs for the monoidal structure of the smash product*](https://youtu.be/JEUvWyd1mTk), for the
+  electronic seminar [HoTTEST](https://www.uwo.ca/math/faculty/kapulkin/seminars/hottest.html){.secondarylink}
 * [*Homotopy type theory: working invariantly in homotopy theory*](https://video.ias.edu/postdoc/2017/0926-GuillaumeBrunerie),
   Short talks by postdoctoral members, School of Mathematics, IAS, Princeton, New Jersey, September 2017
 * [*Invariant homotopy theory in the univalent foundations*](https://video.ias.edu/shorttalks/2016/0928-GuillaumeBrunerie),
   Short talks by postdoctoral members, School of Mathematics, IAS, Princeton, New Jersey, September 2016
 * [*The fourth homotopy group of the three-dimensional sphere*](http://www.fields.utoronto.ca/video-archive/2016/05/2012-15042)),
- at the
- “[Workshop on Homotopy Type Theory and Univalent Foundations of Mathematics](http://www.fields.utoronto.ca/activities/15-16/homotopy-type){.secondarylink},
+  at the
+  “[Workshop on Homotopy Type Theory and Univalent Foundations of Mathematics](http://www.fields.utoronto.ca/activities/15-16/homotopy-type){.secondarylink},
  Fields Institute, Toronto, Ontario, Canada, May 2016
 * [*Homotopy Theory in Type Theory*](https://video.ias.edu/univalent/1213/0411-HomotopyGroup), with
   Dan Licata and Peter Lumsdaine, at the seminar of the Institute for Advanced Study, Princeton, New
