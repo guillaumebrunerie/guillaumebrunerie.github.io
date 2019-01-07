@@ -31,7 +31,7 @@ Previously, I was a postdoctoral member of the
 [School of Mathematics](https://www.math.ias.edu/){.secondarylink} of the
 [Institute for Advanced Study](https://www.ias.edu){.secondarylink} in Princeton, New Jersey.
 
-<small>(last updated in December 2018)</small>
+<small>(last updated in January 2019)</small>
 </section>
 
 <section>
@@ -58,16 +58,23 @@ thesis on June 15th 2016.
 Publications
 ------------
 
+[comment]: # (Each publication has four lines:)
+[comment]: # (Name of the article with link)
+[comment]: # (Authors)
+[comment]: # (Journal and editor)
+[comment]: # (DOI)
+
 * [*The James construction and $\pi_4(\mathbb{S}^3)$ in homotopy type theory*](https://arxiv.org/abs/1710.10307).
   Guillaume Brunerie.
-  Journal of Automated Reasoning, Special Issue on Homotopy Type Theory and Univalent Foundations, Springer, accepted for publication.
-* [*A Cubical Approach to Synthetic Homotopy Theory*](pdf/lb15cubicalsynth.pdf). Dan Licata and
-  Guillaume Brunerie. 2015 30th Annual ACM/IEEE Symposium on Logic in Computer Science (LICS 2015),
-  pages 92–103, IEEE.
+  Journal of Automated Reasoning, Special Issue on Homotopy Type Theory and Univalent Foundations, Springer.
+  [doi:10.1007/s10817-018-9468-2](https://doi.org/10.1007/s10817-018-9468-2){.secondarylink}.
+* [*A Cubical Approach to Synthetic Homotopy Theory*](pdf/lb15cubicalsynth.pdf).
+  Dan Licata and Guillaume Brunerie.
+  2015 30th Annual ACM/IEEE Symposium on Logic in Computer Science (LICS 2015), pages 92–103, IEEE.
   [doi:10.1109/LICS.2015.19](https://doi.org/10.1109/LICS.2015.19){.secondarylink}.
-* [*$\pi_n(S^n)$ in Homotopy Type Theory*](pdf/lb13cpp.pdf). Dan Licata and Guillaume Brunerie.
-  Certified Programs and Proofs (CPP 2013), volume 8307 of Lecture Notes in Computer Science (LNCS),
-  pages 1–16. Springer.
+* [*$\pi_n(S^n)$ in Homotopy Type Theory*](pdf/lb13cpp.pdf).
+  Dan Licata and Guillaume Brunerie.
+  Certified Programs and Proofs (CPP 2013), volume 8307 of Lecture Notes in Computer Science (LNCS), pages 1–16. Springer.
   [doi:10.1007/978-3-319-03545-1](https://doi.org/10.1007/978-3-319-03545-1){.secondarylink}.
 
 Preprints and other writings of interest
