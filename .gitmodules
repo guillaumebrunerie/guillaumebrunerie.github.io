@@ -4,3 +4,6 @@
 [submodule "hide-n-run-LD44"]
 	path = hide-n-run-LD44
 	url = https://github.com/guillaumebrunerie/hidenrun
+[submodule "hidenrun"]
+	path = hidenrun
+	url = https://github.com/guillaumebrunerie/hidenrun
