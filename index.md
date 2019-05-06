@@ -31,7 +31,7 @@ Previously, I was a postdoctoral member of the
 [School of Mathematics](https://www.math.ias.edu/){.secondarylink} of the
 [Institute for Advanced Study](https://www.ias.edu){.secondarylink} in Princeton, New Jersey.
 
-<small>(last updated in April 2019)</small>
+<small>(last updated in May 2019)</small>
 </section>
 
 <section>
@@ -156,8 +156,8 @@ Other interests
 ===============
 
 I’m also interested in programming and free software, and I have some experience with various
-programming languages like OCaml, Javascript, C, Lua, Python, shell scripting. Some of my projects
-are available on [my GitHub page](https://github.com/guillaumebrunerie).
+programming languages like Javascript, Python, Lua, OCaml, C, shell scripting, Haskell. Some of my
+projects are available on [my GitHub page](https://github.com/guillaumebrunerie).
 
 </section>
 
