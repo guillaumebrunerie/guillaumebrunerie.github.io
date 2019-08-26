@@ -92,7 +92,7 @@ Slides of talks
 ---------------
 
 * [*A formalization of the initiality conjecture in Agda*](pdf/initiality.pdf), Homotopy Type Theory
-* 2019 Conference, Carnegie Mellon University, Pittsburgh, Pennsylvania, August 2019
+  2019 Conference, Carnegie Mellon University, Pittsburgh, Pennsylvania, August 2019
 * [*Formalization in Agda (part I only)*](pdf/SummerSchool1.pdf), Homotopy Type Theory 2019 Summer
   School, Carnegie Mellon University, Pittsburgh, Pennsylvania, August 2019
 * [*Computer-generated proofs for the monoidal structure of the smash product*](pdf/monoidalsmashproduct.pdf),
