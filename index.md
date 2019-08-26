@@ -31,7 +31,7 @@ Previously, I was a postdoctoral member of the
 [School of Mathematics](https://www.math.ias.edu/){.secondarylink} of the
 [Institute for Advanced Study](https://www.ias.edu){.secondarylink} in Princeton, New Jersey.
 
-<small>(last updated in June 2019)</small>
+<small>(last updated in August 2019)</small>
 </section>
 
 <section>
@@ -91,6 +91,10 @@ Preprints and other writings of interest
 Slides of talks
 ---------------
 
+* [*A formalization of the initiality conjecture in Agda*](pdf/initiality.pdf), Homotopy Type Theory
+* 2019 Conference, Carnegie Mellon University, Pittsburgh, Pennsylvania, August 2019
+* [*Formalization in Agda (part I only)*](pdf/SummerSchool1.pdf), Homotopy Type Theory 2019 Summer
+  School, Carnegie Mellon University, Pittsburgh, Pennsylvania, August 2019
 * [*Computer-generated proofs for the monoidal structure of the smash product*](pdf/monoidalsmashproduct.pdf),
   HoTTEST Seminar, November 2018
 * [*Experiments in cubical type theory*](pdf/cubicalexperiments.pdf), Joint Mathematics
@@ -165,6 +169,6 @@ projects are available on [my GitHub page](https://github.com/guillaumebrunerie)
 Contact
 =======
 
-You can contact me by email at the address <guillaume.brunerie@gmail.com>.
+You can contact me by email at the address <guillaume.brunerie@gmail.com> or <brunerie@math.su.se>.
 </section>
 </div>
