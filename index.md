@@ -161,7 +161,9 @@ Other interests
 
 I’m also interested in programming and free software, and I have some experience with various
 programming languages like Javascript, Python, Lua, OCaml, C, shell scripting, Haskell. Some of my
-projects are available on [my GitHub page](https://github.com/guillaumebrunerie).
+projects are available on [my GitHub page](https://github.com/guillaumebrunerie). I’m also
+interested in game development, you can find the few games I’ve made on [my itch.io
+page](https://latcarf.itch.io).
 
 </section>
 
