@@ -29,9 +29,9 @@ University](https://www.su.se/english/){.secondarylink} since September 2018.
 
 Previously, I was a postdoctoral member of the
 [School of Mathematics](https://www.math.ias.edu/){.secondarylink} of the
-[Institute for Advanced Study](https://www.ias.edu){.secondarylink} in Princeton, New Jersey.
+[Institute for Advanced Study](https://www.ias.edu){.secondarylink} in Princeton, New Jersey for two years.
 
-<small>(last updated in November 2019)</small>
+<small>(last updated in December 2019)</small>
 </section>
 
 <section>
@@ -41,7 +41,7 @@ Curriculum Vitae, papers and talks
 CV
 --
 
-You can find my full CV [here](pdf/cv.pdf).
+You can find my full academic CV [here](pdf/cv.pdf).
 
 PhD thesis
 ----------
