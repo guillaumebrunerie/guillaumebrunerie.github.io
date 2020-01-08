@@ -31,7 +31,7 @@ Previously, I was a postdoctoral member of the
 [School of Mathematics](https://www.math.ias.edu/){.secondarylink} of the
 [Institute for Advanced Study](https://www.ias.edu){.secondarylink} in Princeton, New Jersey for two years.
 
-<small>(last updated in December 2019)</small>
+<small>(last updated in January 2020)</small>
 </section>
 
 <section>
