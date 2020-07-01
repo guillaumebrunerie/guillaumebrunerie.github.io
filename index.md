@@ -31,7 +31,7 @@ Previously, I was a postdoctoral member of the
 [School of Mathematics](https://www.math.ias.edu/){.secondarylink} of the
 [Institute for Advanced Study](https://www.ias.edu){.secondarylink} in Princeton, New Jersey for two years.
 
-<small>(last updated in June 2020)</small>
+<small>(last updated in July 2020)</small>
 </section>
 
 <section>
@@ -154,6 +154,7 @@ Others writings
 - [*Densdisigeblaj spacoj*](pdf/densdisigeblajspacoj.pdf), a proof of a theorem in point-set
   topology: every metric space without isolated points can be partitioned in two dense subspaces (in
   Esperanto, 2008).
+</section>
 
 <section>
 Other interests
@@ -164,7 +165,6 @@ programming languages like Javascript, Python, Lua, OCaml, C, shell scripting, H
 projects are available on [my GitHub page](https://github.com/guillaumebrunerie). I’m also
 interested in game development, you can find the few games I’ve made on [my itch.io
 page](https://latcarf.itch.io).
-
 </section>
 
 <section>
