@@ -18,20 +18,22 @@ About me
 
 ![](picture.jpg)
 
-My name is Guillaume Brunerie and I’m a researcher in mathematics and computer science working
-mainly in *homotopy type theory*, a field combining mathematics (in particular homotopy theory,
-category theory, and constructive mathematics) and theoretical computer science (in particular type
-theory, logic, and proof assistants).
+My name is Guillaume Brunerie and I’m a researcher in mathematics and computer science interested in
+game development and programming.
 
-I am currently a postdoctoral researcher in the [Logic
-Group](https://www.su.se/english/research/2.19150/logic-group){.secondarylink} of [Stockholm
-University](https://www.su.se/english/){.secondarylink} since September 2018.
+I am currently a postdoctoral researcher in
+[Stockholm University](https://www.math.su.se/english/research/research-groups/research-group-in-mathematical-logic-1.330078){.secondarylink}
+since September 2018 where I’m working mainly on *homotopy type theory*, a field combining
+mathematics (in particular homotopy theory, category theory, and constructive mathematics) with
+computer science (in particular type theory, logic, and proof assistants).
 
 Previously, I was a postdoctoral member of the
-[School of Mathematics](https://www.math.ias.edu/){.secondarylink} of the
-[Institute for Advanced Study](https://www.ias.edu){.secondarylink} in Princeton, New Jersey for two years.
+[Institute for Advanced Study](https://www.math.ias.edu/){.secondarylink} in Princeton, New Jersey,
+USA, and before that a PhD student in the
+[University of Nice Sophia Antipolis](http://math.unice.fr/laboratoire/pr%C3%A9sentation-du-laboratoire){.secondarylink}
+in France.
 
-<small>(last updated in July 2020)</small>
+<small>(last updated in August 2020)</small>
 </section>
 
 <section>
@@ -41,7 +43,7 @@ Curriculum Vitae, papers and talks
 CV
 --
 
-You can find my full academic CV [here](pdf/cv.pdf).
+You can find my academic CV [here](pdf/cv.pdf).
 
 PhD thesis
 ----------
@@ -53,7 +55,9 @@ thesis on June 15th 2016.
 
 * [*On the homotopy groups of spheres in homotopy type theory*](https://arxiv.org/abs/1606.05916)
   (187 pages, in English, with a 20-page summary in French at the end). You can
-  also download the [slides of the oral presentation](pdf/soutenance.pdf).
+  also download the [slides of the oral presentation](pdf/soutenance.pdf) and the
+  [poster](pdf/poster.pdf) (in French, 2015).
+
 
 Publications
 ------------
@@ -145,7 +149,6 @@ Videos of talks
 Others writings
 ---------------
 
-- A [poster](pdf/poster.pdf) on homotopy type theory (in French, 2015).
 - A Python script generating Agda code for semi-simplicial types, truncated at any given
   level ([script](other/semisimplicial.py), [result for $n=10$](other/semisimplicial10.txt))
 - [*Structure topologique de l’espace des réseaux unitaires*](pdf/TIPEvENS.pdf), initiation to
