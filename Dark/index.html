@@ -1,0 +1,28 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Dark Family Tree</title>
+  <meta name="description" content="A spoiler-free family tree for the Netflix series Dark.">
+  <meta name="author" content="Guillaume Brunerie">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <svg id="tree" preserveAspectRatio="xMinYMid meet">
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+    </filter>
+
+    <g id="treeContents"></g>
+    <g id="treeUI"></g>
+    <use href="#magnified" id="magnifier"/>
+  </svg>
+  <script src="script.js"></script>
+</body>
+</html>
