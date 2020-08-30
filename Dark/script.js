@@ -1,18 +1,12 @@
-// TODO list
-//
-// - landing page
-// - clean up code (including CSS)
-
-maxImplemented = 18
-
-document.addEventListener("keydown", onkeydown);
+/* On page load, we get the current language/episode/spoiler level from local
+   storage (or from the URL) and draw the page */
 
 window.onload = function ()
 {
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
 
-    lang           = urlParams.get("hl") || localStorage.getItem('lang') || "en";
+    lang           = urlParams.get("hl") || localStorage.getItem('lang') || "fr";
     episodeOverall = urlParams.get("ep") || parseInt(localStorage.getItem('episode'), 10) || 0;
     spoilerLevel   = urlParams.get("sp") || parseInt(localStorage.getItem('spoiler'), 10) || 0;
 
@@ -29,160 +23,28 @@ window.onload = function ()
     if (spoilerLevel > 26)
         spoilerLevel = 26;
 
-    var b = document.getElementById("tree");
-    b.addEventListener("click", diminish);
-    b.addEventListener("touchend", touchEnd);
-    b.addEventListener("touchstart", touchStart);
-
     redrawPage();
 }
-
-job =
-    {charlotte: {en: "(police officer)",
-                 fr: "(policière)"},
-     peter: {en: "(psychologist)",
-             fr: "(psychologue)"},
-     katharina: {en: "(school rector)",
-                 fr: "(directrice d’école)"},
-     ulrich: {en: "(police officer)",
-              fr: "(policier)"},
-     hannah: {en: "(massage therapist)",
-              fr: "(masseuse)"},
-     regina: {en: "(hotel owner)",
-              fr: "(propriétaire d’hôtel)"},
-     aleksander: {en: "(nuclear plant director)",
-                  fr: "(directeur de la centrale)"},
-     bernd: {en: "(old director of the nuclear plant)",
-             fr: "(ancien directeur de la centrale)"},
-     ines: {en: "(nurse)",
-            fr: "(infirmière)"},
-     claudia: {en: "(new director of the nuclear plant)",
-               fr: "(nouvelle directrice de la centrale)"},
-     egon: {en: "(police officer)",
-            fr: "(policier)"},
-     helge: {en: "(guard at the nuclear plant)",
-             fr: "(garde à la centrale)"}}
-
-stranger = {en: "The stranger", fr: "L’étranger"}
-missing = {en: "missing", fr: "disparu"}
-dead = {en: "dead", fr: "mort"}
-deadF = {en: "dead", fr: "morte"}
-inn = {en: "in", fr: "en"}
-familyTree = {en: "Dark Family Tree",
-              fr: "Arbre généalogique de Dark"}
-seasonTxt = {en: "Season", fr: "Saison"}
-episodeTxt = {en: "Episode", fr: "épisode"}
-
-copyrightNetflix =  {en: "Images and characters by", fr: "Images et personnages par"}
-copyrightMe = {en: "Design of this page by", fr: "Conception de cette page par"}
-
-showSpoilersFor = {en: "Show spoilers for", fr: "Afficher les spoilers pour"}
-thisEpisode = {en: {true: "this episode?", false: "this episode and those before?"},
-               fr: {true: "cet épisode?", false: "cet épisode et les précédents?"}}
-
-hideSpoilers = {en: "hide spoilers", fr: "cacher les spoilers"}
-
-bgColor = [, "#0F2024", "#23250E", "#261C0D"];
-
-titleText =
-    {en:
-     ["Welcome to my spoiler-free guide to the characters of the series Dark.",
-      "You can navigate through the different episodes with the left/right arrow keys",
-      "(or swipe on mobile) and unlock the spoilers for the episodes you have watched.",
-      " ",
-      "Contact me if you notice any issue"],
-     fr:
-     ["Bienvenue sur mon guide sans spoilers des charactères de la série Dark.",
-      "Vous pouvez naviguer d’un épisode à l’autre avec les touches droite et gauche",
-      "du clavier (ou en faisant glisser le doigt sur le côté sur mobile) et débloquer",
-      "les spoilers des épisodes que vous avez regardés.",
-      " ",
-      "Si vous rencontrez un problème technique, ou si vous pensez qu’un spoiler",
-      "apparaît trop tôt ou trop tard, ou n’importe quel autre problème, contactez-moi."]}
 
 window.onresize = redrawPage;
 
-function redrawPage()
-{
-    var season = 1;
-    var episode = episodeOverall;
-    if (episodeOverall > 18) {
-        season = 3;
-        episode = episodeOverall - 18;
-    } else if (episodeOverall > 10) {
-        season = 2;
-        episode = episodeOverall - 10;
-    };
 
-    document.title = familyTree[lang];
-    document.documentElement.lang = lang;
+/* Event listeners and swipe support */
 
-    loadEpisode(episodeOverall <= spoilerLevel ? episodeOverall : (spoilerLevel || 1));
-    initSVG(season, episode);
-    computePositions();
+document.addEventListener("keydown", keyDown);
+document.addEventListener("click", reduce);
+document.addEventListener("touchend", touchEnd);
+document.addEventListener("touchstart", touchStart);
 
-    spoilerPage(season, episode);
-
-    generateSVG();
-}
-
-function spoilerPage(season, episode)
-{
-}
-
-function showSpoiler()
-{
-    spoilerLevel = episodeOverall;
-    localStorage.setItem('spoiler', spoilerLevel);
-    redrawPage();
-}
-
-function hideSpoiler()
-{
-    spoilerLevel = episodeOverall - 1;
-    localStorage.setItem('spoiler', spoilerLevel);
-    redrawPage();
-}
-
-function onkeydown(e)
+function keyDown(e)
 {
     if (e.key === "ArrowRight") {
+        e.preventDefault();
         nextEpisode();
-        e.preventDefault();
     } else if (e.key === "ArrowLeft") {
-        previousEpisode();
         e.preventDefault();
+        previousEpisode();
     }
-}
-
-function nextEpisode()
-{
-    if (episodeOverall < 26)
-    {
-        episodeOverall++;
-        localStorage.setItem('episode', episodeOverall);
-        redrawPage();
-    }
-}
-
-function previousEpisode()
-{
-    if (episodeOverall >= 1) {
-        episodeOverall--;
-        localStorage.setItem('episode', episodeOverall);
-        redrawPage();
-    }
-}
-
-function enableFullscreen()
-{
-    document.body.requestFullscreen().catch(() => {});
-    screen.orientation.lock("landscape").catch(() => {});
-}
-
-function disableFullscreen()
-{
-    document.exitFullscreen().catch(() => {});
 }
 
 touchX = 0;
@@ -211,11 +73,148 @@ function touchEnd(e)
         previousEpisode();
 }
 
-// Generates all the data of the corresponding episode
+
+/* Functions to change the current page */
+
+function showSpoiler()
+{
+    spoilerLevel = episodeOverall;
+    localStorage.setItem('spoiler', spoilerLevel);
+    redrawPage();
+}
+
+function hideSpoiler()
+{
+    spoilerLevel = episodeOverall - 1;
+    localStorage.setItem('spoiler', spoilerLevel);
+    redrawPage();
+}
+
+function nextEpisode()
+{
+    if (episodeOverall < 26) {
+        episodeOverall++;
+        localStorage.setItem('episode', episodeOverall);
+        redrawPage();
+    }
+}
+
+function previousEpisode()
+{
+    if (episodeOverall >= 1) {
+        episodeOverall--;
+        localStorage.setItem('episode', episodeOverall);
+        redrawPage();
+    }
+}
+
+function enableFullscreen()
+{
+    document.body.requestFullscreen().catch(() => {});
+    screen.orientation.lock("landscape").catch(() => {});
+}
+
+function disableFullscreen()
+{
+    document.exitFullscreen().catch(() => {});
+}
+
+function changeLanguage()
+{
+    if (lang === "fr")
+        lang = "en";
+    else
+        lang = "fr";
+
+    localStorage.setItem('lang', lang);
+    redrawPage();
+}
+
+
+/* Magnifying and reducing */
+
+function magnify(e, obj)
+{
+    /* We prevent reducing due to clicking on the document */
+    e.stopPropagation();
+
+    /* If we clicked on the magnified character, we reduce it */
+    if (obj.getAttribute("id") == "magnified") {
+        reduce();
+        return;
+    }
+
+    /* We reduce the (potential) other magnified character */
+    reduce();
+
+    /* No enlarging if this episode is unlocked */
+    if (episodeOverall > spoilerLevel)
+        return;
+
+    /* We compute whether it is out of bounds */
+    var bboxOld = obj.getBBox();
+    var bbox = {x: bboxOld.x - bboxOld.width, y: bboxOld.y - bboxOld.height,
+                width: 3 * bboxOld.width, height: 3 * bboxOld.height};
+    var xTranslation = bbox.x < data.left ? data.left - bbox.x :
+        (bbox.x + bbox.width > data.right ? data.right - bbox.x - bbox.width : 0);
+    var yTranslation = bbox.y < data.top ? data.top - bbox.y :
+        (bbox.y + bbox.height > data.bottom ? data.bottom - bbox.y - bbox.height : 0);
+
+    /* We magnify it and translate it to put it in view */
+    obj.style.transform = `translate(${xTranslation}px, ${yTranslation}px) scale(3)`;
+
+    /* z-index hack */
+    obj.setAttribute("id", "magnified");
+}
+
+function reduce()
+{
+    var magnified = document.getElementById("magnified");
+
+    if (magnified) {
+        magnified.style.transform = "";
+        magnified.removeAttribute("id");
+    }
+}
+
+
+/* Main function that redraws the whole page */
+
+function redrawPage()
+{
+    var season = 1;
+    var episode = episodeOverall;
+    if (episodeOverall > 18) {
+        season = 3;
+        episode = episodeOverall - 18;
+    } else if (episodeOverall > 10) {
+        season = 2;
+        episode = episodeOverall - 10;
+    };
+
+    document.title = familyTree[lang];
+    document.documentElement.lang = lang;
+
+    /* We load either
+       - the current episode if it is unlocked
+       - the last unlocked episode
+       - episode 1 if no episode has been unlocked yet (it will be blurred anyway)
+    */
+    loadEpisode(episodeOverall <= spoilerLevel ? episodeOverall : (spoilerLevel || 1));
+    initSVG(season, episode);
+    computePositions();
+    generateSVG();
+}
+
+
+/* Highest implemented episode */
+maxImplemented = 18
+
+
+/* Main function containing all the spoilers. Generates all the data of the corresponding episode */
 function loadEpisode(ep)
 {
     data = {};
-
 
     if (ep <= 0)
         return;
@@ -247,13 +246,13 @@ function loadEpisode(ep)
     addChild("jana", "mads");
 
 
-    addRelation("ulrich", "hannah", {z: 30, dx1: 20, dx2: 20, marriage: "relationship"});
+    addRelation("ulrich", "hannah", {z: 30, dx1: 20, dx2: 20, relationship: "relationship"});
 
     addCharacter("bartosz", ["Bartosz Tiedemann"], "Bartosz.jpg", {ax: 18.5, ay: 7});
     addCharacter("regina", ["Regina Tiedemann", job.regina[lang]], "Regina.jpg", {ax: 18.5, ay: 4});
 
     addChild("regina", "bartosz");
-    addRelation("martha", "bartosz", {z: 20, dx1: 10, marriage: "relationship"});
+    addRelation("martha", "bartosz", {z: 20, dx1: 10, relationship: "relationship"});
 
     addCharacter("jonas", ["Jonas Kahnwald"], "Jonas.jpg", {ax: 13, ay: 7});
     addCharacter("michael", ["Michael Kahnwald"], "Michael.jpg", {ax: 12, ay: 4});
@@ -263,7 +262,7 @@ function loadEpisode(ep)
     addRelation("michael", "hannah");
     addChild("michaelhannah", "jonas");
 
-    addRelation("martha", "jonas", {z: 40, dx1: -10, marriage: "broke up"});
+    addRelation("martha", "jonas", {z: 40, dx1: -10, relationship: "broke up"});
 
     addChild("ines", "michael");
 
@@ -336,7 +335,7 @@ function loadEpisode(ep)
 
     addChild("helge", "peter");
 
-    addRelation("magnus", "franziska", {marriage: "relationship"});
+    addRelation("magnus", "franziska", {relationship: "relationship"});
 
 
     if (ep <= 4)
@@ -345,11 +344,10 @@ function loadEpisode(ep)
 
     addCharacter("noah", ["Noah"], "Noah.jpg", {ax: 15.5, ay: 6.25});
 
-    data.ulrichhannah.marriage = "broke up";
+    data.ulrichhannah.relationship = "broke up";
     data.ulrichhannah.z = 20;
     data.ulrichhannah.dx1 = 20;
     data.ulrichhannah.dx2 = -20;
-    // delete data.ulrichhannah;
 
     delete data.michael;
     delete data.inesmichael;
@@ -381,7 +379,7 @@ function loadEpisode(ep)
     data.mads.images[0].comment = dead[lang];
     data.jonas.images[0].comment = inn[lang] + " 1986";
 
-    addRelation("tronte", "claudia", {dx1: 20, dx2: -20, marriage: "broke up"});
+    addRelation("tronte", "claudia", {dx1: 20, dx2: -20, relationship: "broke up"});
 
 
     if (ep <= 6)
@@ -451,7 +449,7 @@ function loadEpisode(ep)
         return;
     /* Season 2, episode 1 */
 
-    data.marthabartosz.marriage = "broke up";
+    data.marthabartosz.relationship = "broke up";
 
     addPhotoBefore("noah", {year: 1920, image: "NoahYoung.jpg"});
     data.noah.images[1].year = 1953;
@@ -489,7 +487,7 @@ function loadEpisode(ep)
         return;
     /* Season 2, episode 3 */
 
-    addRelation("doris", "agnes", {dx1: -20, dx2: 20, marriage: "relationship"});
+    addRelation("doris", "agnes", {dx1: -20, dx2: 20, relationship: "relationship"});
 
     data.noah.ay = 0;
     data.noah.ax = 7.25;
@@ -559,125 +557,10 @@ function loadEpisode(ep)
     if (ep <= 18)
         return;
     /* Season 3, episode 1 */
-
-    data = {}; // Not implemented yet
 }
 
-function changeLanguage()
-{
-    if (lang === "fr")
-        lang = "en";
-    else
-        lang = "fr";
 
-    localStorage.setItem('lang', lang);
-    redrawPage();
-
-    return false;
-}
-
-function initSVG(season, episode)
-{
-    // Set the viewBox
-    document.getElementById("tree").setAttribute("viewBox", `0 -190 2150 1140`);
-
-    var bbox = calculateViewport(document.getElementById("tree"));
-
-    data.left = bbox.x + 25;
-    data.right = bbox.width + bbox.x - 25;
-    data.top = bbox.y + 25;
-    data.bottom = bbox.height + bbox.y - 25;
-    data.hFactor = bbox.width/2150 * 100;
-
-    // Background
-    svgCode = `<rect x="${bbox.x}" y="-190" width="${bbox.width}" height="1140" stroke="none" fill="${bgColor[season]}"/>`;
-
-    if (episodeOverall >= 1)
-        // Titlebar
-        uiCode = `<text x="${bbox.width/2}" y="-140" font-size="40" class="title">${familyTree[lang]} : ${seasonTxt[lang]} ${season}, ${episodeTxt[lang]} ${episode}</text>`;
-    else {
-        // Titlebar of the main page
-        uiCode = `<text x="${bbox.width/2}" y="-120" font-size="80" class="title">${familyTree[lang]}</text>`
-
-        // Instructions
-        uiCode += `<text y="200" font-size="40" class="description" style="fill:darkgrey;">`
-        for (const line of titleText[lang])
-            uiCode += `<tspan x="150" dy="50">${line}</tspan>`;
-        uiCode += `</text>`
-    }
-
-    // Language change button
-    uiCode +=
-        `<a href="#" onclick="changeLanguage();"><image href="photos/${(lang == "en") ? "fr" : "en"}.png" x="${bbox.width - 75}" y="-165" width="50" height="50"/></a>`
-
-    // Netflix credits
-    uiCode +=
-        `<text x="${data.right}" y="910" text-anchor="end" fill="darkgrey" font-size="15" font-family="sans">${copyrightNetflix[lang]} <a fill="lightgrey" href="https://www.netflix.com/title/80100172">Netflix</a></text>`
-
-    // Personal credits
-    uiCode +=
-        `<text x="${data.right}" y="930" text-anchor="end" fill="darkgrey" font-size="15" font-family="sans">${copyrightMe[lang]} <a fill="lightgrey" href="https://guillaumebrunerie.github.io">Guillaume Brunerie</a></text>`;
-
-    // Fullscreen button
-    var scaling = "";
-    if (bbox.height > bbox.width)
-        scaling = `transform="translate(${-2*data.right - 10} ${-2*850 + 25}) scale(3)"`
-    if (document.fullscreenElement == null)
-        uiCode +=
-          `<a href="#" onclick="enableFullscreen()" ${scaling}>
-             <rect x="${data.right - 52}" y="800" width="54" height="49" stroke="black" stroke-width="2" rx="5" fill="darkgrey"/>
-             <path d="M ${data.right - 25} 827 m -10   5 l -10  10 v -10 M ${data.right - 25} 827 m -10   5 l -10  10 h  10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
-             <path d="M ${data.right - 25} 827 m  10   5 l  10  10 v -10 M ${data.right - 25} 827 m  10   5 l  10  10 h -10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
-             <path d="M ${data.right - 25} 827 m  10 -10 l  10 -10 v  10 M ${data.right - 25} 827 m  10 -10 l  10 -10 h -10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
-             <path d="M ${data.right - 25} 827 m -10 -10 l -10 -10 v  10 M ${data.right - 25} 827 m -10 -10 l -10 -10 h  10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
-           </a>`;
-    else
-        uiCode +=
-          `<a href="#" onclick="disableFullscreen()">
-             <rect x="${data.right - 52}" y="800" width="54" height="49" stroke="black" stroke-width="2" rx="5" fill="darkgrey"/>
-             <path d="M ${data.right - 25} 827 m -20  15 l  10 -10 v  10 M ${data.right - 25} 827 m -20  15 l  10 -10 h -10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
-             <path d="M ${data.right - 25} 827 m  20  15 l -10 -10 v  10 M ${data.right - 25} 827 m  20  15 l -10 -10 h  10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
-             <path d="M ${data.right - 25} 827 m  20 -20 l -10  10 v -10 M ${data.right - 25} 827 m  20 -20 l -10  10 h  10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
-             <path d="M ${data.right - 25} 827 m -20 -20 l  10  10 v -10 M ${data.right - 25} 827 m -20 -20 l  10  10 h -10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
-           </a>`;
-
-    // Button to hide spoilers
-    if (episodeOverall <= spoilerLevel && episodeOverall >= 1)
-        uiCode += `<a href="#" onclick="hideSpoiler();"><text x="${bbox.width - 125}" y="-140" font-size="20" class="title" style="text-anchor:end">(${hideSpoilers[lang]})</text></a>`;
-
-    // Cancel blur effect (TODO: do it differently?)
-    document.getElementById("treeContents").setAttribute("filter", "");
-
-    // Not implemented pages
-    if (episodeOverall > maxImplemented) {
-        document.getElementById("treeContents").setAttribute("filter", "url(#blur)");
-        uiCode +=
-            `<text x="${bbox.width/2}" y="400" font-size="80" class="title" style="stroke-width:5px">Not implemented yet :(</text>`;
-        return;
-    }
-
-    if (episodeOverall > spoilerLevel) {
-        // Blur the previous tree
-        document.getElementById("treeContents").setAttribute("filter", "url(#blur)");
-
-        // "Show spoilers" text
-        var immediateSpoiler = (episodeOverall == spoilerLevel + 1);
-        uiCode +=
-            `<text x="${bbox.width/2}" y="150" font-size="80" class="title" style="stroke-width:5px">${showSpoilersFor[lang]}</text>
-             <text x="${bbox.width/2}" y="250" font-size="80" class="title" style="stroke-width:5px">${thisEpisode[lang][immediateSpoiler]}</text>`;
-
-        // Eye button
-        uiCode +=
-            `<a href="#" onclick="showSpoiler();">
-               <path d="M ${bbox.width/2 - 100} 470 a 200 350 0 0 1 200 0 a 200 350 0 0 1 -200 0 z" stroke="black" stroke-width="22" fill="lightgrey"/>
-               <path d="M ${bbox.width/2 - 100} 470 a 200 350 0 0 1 200 0 a 200 350 0 0 1 -200 0 z" stroke="lightgrey" stroke-width="16" fill="lightgrey"/>
-               <path d="M ${bbox.width/2 - 100} 470 a 200 350 0 0 1 200 0 a 200 350 0 0 1 -200 0 z" stroke="black" stroke-width="10" fill="lightgrey"/>
-               <circle cx="${bbox.width/2}" cy="470" r="45" stroke="black" stroke-width="10" fill="darkgrey"/>
-               <circle cx="${bbox.width/2}" cy="470" r="16" stroke="black" stroke-width="10" fill="black"/>
-               <circle cx="${bbox.width/2 + 8}" cy="462" r="6" stroke="lightgrey" stroke-width="10" fill="lightgrey"/>
-             </a>`
-    }
-}
+/* Utility functions when adding new data */
 
 function addCharacter(label, names, image, position)
 {
@@ -691,7 +574,8 @@ function addCharacter(label, names, image, position)
 function addRelation(label1, label2, d = {})
 {
     data[label1+label2] = {type: "relation", label1: label1, label2: label2, z: d.z || 20, dx1: d.dx1 || 0,
-                           dx2: d.dx2 || 0, marriage: d.marriage || "married", showFirst: d.showFirst || false};
+                           dx2: d.dx2 || 0, relationship: d.relationship || "married",
+                           showFirst: d.showFirst || false};
 }
 
 function addChild(parents, child, d = {})
@@ -721,31 +605,232 @@ function addPhotoAfter(label, image)
     data[label].images.push(image);
 }
 
+
+/* Localized strings */
+
+job =
+    {charlotte: {en: "(police officer)",
+                 fr: "(policière)"},
+     peter: {en: "(psychologist)",
+             fr: "(psychologue)"},
+     katharina: {en: "(school rector)",
+                 fr: "(directrice d’école)"},
+     ulrich: {en: "(police officer)",
+              fr: "(policier)"},
+     hannah: {en: "(massage therapist)",
+              fr: "(masseuse)"},
+     regina: {en: "(hotel owner)",
+              fr: "(propriétaire d’hôtel)"},
+     aleksander: {en: "(nuclear plant director)",
+                  fr: "(directeur de la centrale)"},
+     bernd: {en: "(old director of the nuclear plant)",
+             fr: "(ancien directeur de la centrale)"},
+     ines: {en: "(nurse)",
+            fr: "(infirmière)"},
+     claudia: {en: "(new director of the nuclear plant)",
+               fr: "(nouvelle directrice de la centrale)"},
+     egon: {en: "(police officer)",
+            fr: "(policier)"},
+     helge: {en: "(guard at the nuclear plant)",
+             fr: "(garde à la centrale)"}}
+
+stranger = {en: "The stranger", fr: "L’étranger"}
+missing = {en: "missing", fr: "disparu"}
+dead = {en: "dead", fr: "mort"}
+deadF = {en: "dead", fr: "morte"}
+inn = {en: "in", fr: "en"}
+familyTree = {en: "Dark Family Tree",
+              fr: "Arbre généalogique de Dark"}
+seasonTxt = {en: "Season", fr: "Saison"}
+episodeTxt = {en: "Episode", fr: "épisode"}
+
+copyrightNetflix =  {en: "Images and characters by", fr: "Images et personnages par"}
+copyrightMe = {en: "Design of this page by", fr: "Conception de cette page par"}
+
+showSpoilersFor = {en: "Show spoilers for", fr: "Afficher les spoilers pour"}
+thisEpisode = {en: {true: "this episode?", false: "this episode and those before?"},
+               fr: {true: "cet épisode?", false: "cet épisode et les précédents?"}}
+
+hideSpoilers = {en: "hide spoilers", fr: "cacher les spoilers"}
+
+instructions =
+    {en:
+     ["Welcome to my spoiler-free guide to the characters of the series Dark.",
+      "- Next episode: Right arrow key or swipe left",
+      "- Previous episode: Left arrow key or swipe right"],
+     fr:
+     ["Bienvenue sur mon guide sans spoiler des charactères de la série Dark.",
+      "- Épisode suivant : Flèche droite du clavier ou swipe à gauche",
+      "- Épisode précédent : Flèche gauche du clavier or swipe à droite"]
+    }
+instructions2 = {en: "- Error or technical issue:",
+                 fr: "- Erreur ou problème technique :"}
+instructions3 = {en: "Contact me",
+                 fr: "Contactez-moi"}
+
+
+/* Set up the UI and prepare the SVG */
+
+function initSVG(season, episode)
+{
+    /* Set the viewBox (constant for now, may change for season 3) */
+    document.getElementById("tree").setAttribute("viewBox", `0 -190 2150 1140`);
+
+    /* Set up the bounds of the SVG */
+    var bbox = calculateViewport(document.getElementById("tree"));
+    data.left = bbox.x + 25;
+    data.right = bbox.width + bbox.x - 25;
+    data.top = bbox.y + 25;
+    data.bottom = bbox.height + bbox.y - 25;
+    data.hFactor = bbox.width/2150 * 100;
+
+    /* Repeated background image */
+    svgCode = `<image href="photos/background${season}.jpg" x="0" y="-190" width="${bbox.width/3}"
+                      height="1140" preserveAspectRatio="none" filter="url(#backgroundBlur)"/>`
+        +     `<image href="photos/background${season}.jpg" x="${bbox.width/3}" y="-190" width="${bbox.width/3}"
+                      height="1140" preserveAspectRatio="none" filter="url(#backgroundBlur)"/>`
+        +     `<image href="photos/background${season}.jpg" x="${2*bbox.width/3}" y="-190" width="${bbox.width/3}"
+                      height="1140" preserveAspectRatio="none" filter="url(#backgroundBlur)"/>`;
+
+    if (episodeOverall >= 1) {
+        /* Titlebar */
+        uiCode = `<text x="${bbox.width/2}" y="-140" font-size="40" class="title">
+                    ${familyTree[lang]} : ${seasonTxt[lang]} ${season}, ${episodeTxt[lang]} ${episode}
+                  </text>`;
+    }
+    else {
+        /* Background image for the main page */
+        uiCode = `<image href="photos/background.jpg" x="0" y="-190" width="${bbox.width}"
+                         height="1140" preserveAspectRatio="none" filter="url(#background)"/>`;
+
+        /* Titlebar of the main page */
+        uiCode += `<text x="${bbox.width/2}" y="-120" font-size="80" class="title">${familyTree[lang]}</text>`
+
+        /* Instructions */
+        uiCode += `<text y="160" font-size="40" class="instructions">`
+        for (const line of instructions[lang])
+            uiCode += `<tspan x="150" dy="90">${line}</tspan>`;
+        uiCode += `<tspan x="150" dy="90">${instructions2[lang]} <a href="mailto:guillaume.brunerie@gmail.com">${instructions3[lang]}</a>
+                   </tspan>`;
+        uiCode += `</text>`
+    }
+
+    /* Language change button */
+    uiCode +=
+        `<a href="#" onclick="changeLanguage();"><image href="photos/${(lang == "en") ? "fr" : "en"}.png"
+            x="${bbox.width - 75}" y="-165" width="50" height="50"/></a>`
+
+    /* Netflix credits */
+    uiCode +=
+        `<text x="${data.right}" y="910" class="copyright">
+           ${copyrightNetflix[lang]} <a href="https://www.netflix.com/title/80100172">Netflix</a>
+         </text>`
+
+    /* Personal credits */
+    uiCode +=
+        `<text x="${data.right}" y="930" class="copyright">
+          ${copyrightMe[lang]} <a href="https://guillaumebrunerie.github.io">Guillaume Brunerie</a>
+         </text>`;
+
+    /* Fullscreen button */
+
+    /* Display the button bigger in portait mode */
+    var scaling = "";
+    if (bbox.height > bbox.width)
+        scaling = `transform="translate(${-2*data.right - 10} ${-2*850 + 25}) scale(3)"`
+
+    if (document.fullscreenElement == null)
+        uiCode +=
+          `<g ${scaling}><a href="#" onclick="enableFullscreen()">
+             <rect x="${data.right - 52}" y="800" width="54" height="49" stroke="black" stroke-width="2" rx="5" fill="darkgrey"/>
+             <path d="M ${data.right - 25} 827 m -10   5 l -10  10 v -10 M ${data.right - 25} 827 m -10   5 l -10  10 h  10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+             <path d="M ${data.right - 25} 827 m  10   5 l  10  10 v -10 M ${data.right - 25} 827 m  10   5 l  10  10 h -10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+             <path d="M ${data.right - 25} 827 m  10 -10 l  10 -10 v  10 M ${data.right - 25} 827 m  10 -10 l  10 -10 h -10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+             <path d="M ${data.right - 25} 827 m -10 -10 l -10 -10 v  10 M ${data.right - 25} 827 m -10 -10 l -10 -10 h  10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+           </a>`;
+    else
+        uiCode +=
+          `<a href="#" onclick="disableFullscreen()">
+             <rect x="${data.right - 52}" y="800" width="54" height="49" stroke="black" stroke-width="2" rx="5" fill="darkgrey"/>
+             <path d="M ${data.right - 25} 827 m -20  15 l  10 -10 v  10 M ${data.right - 25} 827 m -20  15 l  10 -10 h -10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+             <path d="M ${data.right - 25} 827 m  20  15 l -10 -10 v  10 M ${data.right - 25} 827 m  20  15 l -10 -10 h  10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+             <path d="M ${data.right - 25} 827 m  20 -20 l -10  10 v -10 M ${data.right - 25} 827 m  20 -20 l -10  10 h  10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+             <path d="M ${data.right - 25} 827 m -20 -20 l  10  10 v -10 M ${data.right - 25} 827 m -20 -20 l  10  10 h -10" stroke="black" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+           </a></g>`;
+
+    /* Button to hide spoilers */
+    if (episodeOverall <= spoilerLevel && episodeOverall >= 1)
+        uiCode += `<a href="#" onclick="hideSpoiler();"><text x="${bbox.width - 125}" y="-140" font-size="20"
+                      class="title" style="text-anchor:end">(${hideSpoilers[lang]})</text></a>`;
+
+    /* Cancel blur effect if present */
+    document.getElementById("treeContents").classList.add("enabled");
+
+    /* "Not implemented yet" page */
+    if (episodeOverall > maxImplemented) {
+        document.getElementById("treeContents").classList.remove("enabled");
+        uiCode +=
+            `<text x="${bbox.width/2}" y="400" font-size="80" class="title" style="stroke-width:5px">
+               Not implemented yet :(
+             </text>`;
+        return;
+    }
+
+    /* "Show spoilers" page */
+    if (episodeOverall > spoilerLevel) {
+        document.getElementById("treeContents").classList.remove("enabled");
+
+        var immediateSpoiler = (episodeOverall == spoilerLevel + 1);
+        uiCode +=
+            `<text x="${bbox.width/2}" y="150" font-size="80" class="title" style="stroke-width:5px">
+               ${showSpoilersFor[lang]}
+             </text>
+             <text x="${bbox.width/2}" y="250" font-size="80" class="title" style="stroke-width:5px">
+               ${thisEpisode[lang][immediateSpoiler]}
+             </text>`;
+
+        /* Eye button */
+        uiCode +=
+            `<g class="button" onclick="showSpoiler();">
+               <g>
+                 <path d="M ${bbox.width/2 - 100} 470 a 200 350 0 0 1 200 0 a 200 350 0 0 1 -200 0 z"
+                       stroke="black" stroke-width="22" fill="lightgrey""/>
+                 <path d="M ${bbox.width/2 - 100} 470 a 200 350 0 0 1 200 0 a 200 350 0 0 1 -200 0 z"
+                       stroke="lightgrey" stroke-width="16" fill="lightgrey"/>
+                 <path d="M ${bbox.width/2 - 100} 470 a 200 350 0 0 1 200 0 a 200 350 0 0 1 -200 0 z"
+                       stroke="black" stroke-width="10" fill="lightgrey"/>
+                 <circle cx="${bbox.width/2}" cy="470" r="45" stroke="black" stroke-width="10" fill="darkgrey"/>
+                 <circle cx="${bbox.width/2}" cy="470" r="16" stroke="black" stroke-width="10" fill="black"/>
+                 <circle cx="${bbox.width/2 + 8}" cy="462" r="6" stroke="lightgrey" stroke-width="10" fill="lightgrey"/>
+               </g>
+             </g>`
+    }
+}
+
+
+/* Compute the exact position of every element */
+
 function computePosition(label)
 {
-    // Computes the size and position of the element.
-    // For characters: d.x, d.y, d.width, d.height
-    // For relations and child relations: d.x1, d.x2, d.y1, d.y2
     var d = data[label];
 
-    // Returns if the position has already been computed
+    /* Return early if the position has already been computed */
     if (d.x !== undefined)
         return;
 
     if (d.type === "character") {
-        // Compute the height
+        /* Compute the height */
         d.bottomHeight = 10 + 20 * d.names.length;
 
-        // Compute the position
-        d.x = d.ax * data.hFactor; //100;
+        /* Compute the actual position */
+        d.x = d.ax * data.hFactor;
         d.y = d.ay * 100;
 
-        // Compute the side
-        d.side = (d.ax <= 10) ? 1 : -1;
-
     } else if (d.type === "relation") {
+        /* Compute the position of the parent nodes, and then all the other required data */
         computePosition(d.label1);
         computePosition(d.label2);
+
         d.x1 = data[d.label1].x + d.dx1;
         d.x2 = data[d.label2].x + d.dx2;
         d.y1 = data[d.label1].y + 50 + data[d.label1].bottomHeight;
@@ -754,18 +839,22 @@ function computePosition(label)
 
         d.x = (d.x1 + d.x2)/2;
     } else if (d.type === "child") {
+        /* Compute the position of the parent nodes, and then all the other required data */
         computePosition(d.parents);
         computePosition(d.child);
+
         d.x1 = data[d.parents].x + (d.dx1 || 0);
         d.y1 = data[d.parents].yM || data[d.parents].y + 50 + data[d.parents].bottomHeight;
         d.x2 = data[d.child].x + d.dx;
         d.y2 = data[d.child].y - 60;
+
         if (d.dxx !== undefined)
             d.x3 = data[d.child].x + d.dxx;
-
     } else if (d.type === "siblings") {
+        /* Compute the position of the parent nodes, and then all the other required data */
         computePosition(d.label1);
         computePosition(d.label2);
+
         d.x1 = data[d.label1].x;
         d.x2 = data[d.label2].x;
         d.y1 = data[d.label1].y - 60;
@@ -778,6 +867,9 @@ function computePositions()
     for (label in data)
         computePosition(label);
 }
+
+
+/* Generate the main tree, from the already computed positions */
 
 function generateSVG()
 {
@@ -792,6 +884,7 @@ function generateSVG()
     document.querySelector("#treeContents").innerHTML = svgCode;
     document.querySelector("#treeUI").innerHTML = uiCode;
 
+    /* Adapt the sizes of comment boxes */
     for (const element of document.getElementsByClassName("comment")) {
         var bbox = element.getBBox();
         var rectangle = document.getElementById("R" + element.id.substring(1));
@@ -803,64 +896,17 @@ function generateSVG()
 function displayElement(d)
 {
     if (d.type === "relation")
-        displayRelation(d.x1, d.x2, d.y1, d.y2, d.yM, d.marriage);
+        displayRelation(d.x1, d.x2, d.y1, d.y2, d.yM, d.relationship);
     else if (d.type === "child")
         displayChild(d.x1, d.x2, d.y1, d.y2, d.dy, d.x3);
     else if (d.type === "siblings")
         displaySiblings(d.x1, d.x2, d.y1, d.y2);
     else if (d.type === "character")
-        displayPerson(d.x, d.y, d.side, d.names, d.images);
+        displayPerson(d.x, d.y, d.names, d.images);
 }
 
-function display(str)
-{
-    svgCode += str;
-}
 
-function enlarge(e, obj, touchDelta)
-{
-    // We prevent diminishing due to clicking on the document
-    e.stopPropagation();
-
-    // If we clicked on the magnified character, we diminish it
-    if (obj.getAttribute("id") == "magnified") {
-        diminish();
-        return;
-    }
-
-    // We diminish the (potential) other magnified character
-    diminish();
-
-    // No enlarging if this episode is unlocked
-    if (episodeOverall > spoilerLevel)
-            return;
-
-    obj.setAttribute("id", "magnified");
-
-    // We first only scale it
-    obj.setAttribute("transform", `scale(3)`);
-
-    // We compute whether it is out of bounds
-    var magnifier = document.getElementById("magnifier");
-    var bbox = magnifier.getBBox();
-    var xTranslation = bbox.x < data.left ? data.left - bbox.x :
-        (bbox.x + bbox.width > data.right ? data.right - bbox.x - bbox.width : 0);
-    var yTranslation = bbox.y < data.top ? data.top - bbox.y :
-        (bbox.y + bbox.height > data.bottom ? data.bottom - bbox.y - bbox.height : 0);
-
-    // Then we translate it to put it in view
-    obj.setAttribute("transform", `translate(${xTranslation}, ${yTranslation}) scale(3)`);
-}
-
-function diminish()
-{
-    var magnified = document.getElementById("magnified");
-
-    if (magnified) {
-        magnified.removeAttribute("transform");
-        magnified.removeAttribute("id");
-    }
-}
+/* Generate the SVG code for a character, with its images and names */
 
 dasharrays = {2085: "20 3",
               2052: "9 3",
@@ -869,99 +915,104 @@ dasharrays = {2085: "20 3",
               1953: "3 9",
               1920: "3 19"}
 
-function displayPerson(x, y, side, names, images)
+function displayPerson(x, y, names, images)
 {
-    var result = "";
+    svgCode += `<g class="button" onclick="magnify(arguments[0], this)">`;
 
-    result += `<g onclick="enlarge(arguments[0], this, 0)" style="transform-origin:${x}px ${y}px">`;
-
-    result += `<rect x="${x - images.length * 53 - 1}" y="${y - 54}" width="${106 * images.length + 2}" height="${108}" fill="black" rx="6"/>`;
+    /* Background rectangle */
+    svgCode += `<rect x="${x - images.length * 53 - 1}" y="${y - 54}" width="${106 * images.length + 2}"
+                      height="${108}" fill="black" rx="6"/>`;
 
     for (var i in images) {
+        /* The image itself */
         var currentX = x - images.length * 53 + i * 106 + 3;
-        var color = "lightgrey";
-        result += `<image x="${currentX}" y="${y - 50}" width="100" height="100" preserveAspectRatio="none"
+        svgCode += `<image x="${currentX}" y="${y - 50}" width="100" height="100" preserveAspectRatio="none"
                           href="photos/${images[i].image}"/>`;
 
-        var commentColor = "purple";
-        if (images[i].comment === missing[lang])
-            commentColor = "red";
-        if (images[i].comment === dead[lang] || images[i].comment === deadF[lang])
-            commentColor = "darkred";
-        if (images[i].comment === inn[lang] + " 1921")
-            commentColor = "black";
-        if (images[i].comment === inn[lang] + " 1953")
-            commentColor = "darkcyan";
-        if (images[i].comment === inn[lang] + " 1954")
-            commentColor = "darkcyan";
-        if (images[i].comment === inn[lang] + " 1986")
-            commentColor = "blue";
-        if (images[i].comment === inn[lang] + " 1987")
-            commentColor = "blue";
-        if (images[i].comment === inn[lang] + " 2052")
-            commentColor = "green";
-        if (images[i].comment === inn[lang] + " 2053")
-            commentColor = "green";
+        /* The border of the image */
 
-        da = dasharrays[images[i].year];
-
+        var color = "lightgrey";
         if (images[i].otherworld)
             color = "purple";
 
-        result += `<rect x="${currentX}" y="${y - 50}" width="100" height="100" rx="3" stroke-dasharray="${da}"
+        da = dasharrays[images[i].year];
+
+        svgCode += `<rect x="${currentX}" y="${y - 50}" width="100" height="100" rx="3" stroke-dasharray="${da}"
                          fill="none" stroke-width="3" stroke="${color}"/>`;
 
+        /* The comment, if there is one */
         if (images[i].comment) {
-            result += `<rect x="${currentX - 30 + 50}" y="${y + 28}" width="60" height="18" rx="5"
-                             stroke-width="2" stroke="${commentColor}" fill="darkgrey" id="${"R" + Math.round(x) + "_" + Math.round(y) + "_" + i}"/>`;
-            result += `<text x="${currentX + 50}" y="${y + 37}" text-anchor="middle"
-                             font-family="sans" font-weight="bold" fill="black" font-size="12"
-                             dominant-baseline="central" class="comment" id="${"T" + Math.round(x) + "_" + Math.round(y) + "_" + i}">${images[i].comment}</text>`;
+            var commentColor = "purple";
+            if (images[i].comment === missing[lang])
+                commentColor = "red";
+            if (images[i].comment === dead[lang] || images[i].comment === deadF[lang])
+                commentColor = "darkred";
+            if (images[i].comment === inn[lang] + " 1921")
+                commentColor = "black";
+            if (images[i].comment === inn[lang] + " 1953")
+                commentColor = "darkcyan";
+            if (images[i].comment === inn[lang] + " 1954")
+                commentColor = "darkcyan";
+            if (images[i].comment === inn[lang] + " 1986")
+                commentColor = "blue";
+            if (images[i].comment === inn[lang] + " 1987")
+                commentColor = "blue";
+            if (images[i].comment === inn[lang] + " 2052")
+                commentColor = "green";
+            if (images[i].comment === inn[lang] + " 2053")
+                commentColor = "green";
+
+            svgCode += `<rect x="${currentX - 30 + 50}" y="${y + 28}" width="60" height="18" rx="5"
+                              stroke-width="2" stroke="${commentColor}" fill="darkgrey"
+                              id="${"R" + Math.round(x) + "_" + Math.round(y) + "_" + i}"/>`;
+            svgCode += `<text x="${currentX + 50}" y="${y + 37}" font-size="12" class="comment"
+                              id="${"T" + Math.round(x) + "_" + Math.round(y) + "_" + i}">
+                          ${images[i].comment}
+                        </text>`;
         }
     }
 
+    /* The names */
     for (var i in names) {
-        var currentY = y + 70 + 20 * i;
-        result += `<text x="${x}" y="${currentY}" class="name">${names[i]}</text>`;
+        svgCode += `<text x="${x}" y="${y + 70 + 20 * i}" class="name">${names[i]}</text>`;
     }
 
-    result += `</g>`;
-
-    display(result);
+    svgCode += `</g>`;
 }
 
-function displayRelation(x1, x2, y1, y2, yM, marriage)
+function displayRelation(x1, x2, y1, y2, yM, relationship)
 {
     var dasharray = "";
     var w = 2;
-    if (marriage === "married")
+    if (relationship === "married")
         w = 3;
-    if (marriage === "relationship")
+    if (relationship === "relationship")
         dasharray = `stroke-dasharray="7 3"`;
-    if (marriage === "broke up")
+    if (relationship === "broke up")
         dasharray = `stroke-dasharray="2 8"`;
 
-    // if (w == 3)
-    //     display(`<path d="M ${x1} ${y1} V ${yM} H ${x2} V ${y2}"
-    //                stroke="black" stroke-width="5" fill="none"></path>`);
-    display(`<path d="M ${x1} ${y1} V ${yM} H ${x2} V ${y2}"
-                   stroke="lightgrey" stroke-width="${w}" fill="none" ${dasharray}></path>`);
+    svgCode += `<path d="M ${x1} ${y1} V ${yM} H ${x2} V ${y2}"
+                       stroke="lightgrey" stroke-width="${w}" fill="none" ${dasharray}></path>`;
 }
 
 function displaySiblings(x1, x2, y1, y2)
 {
-    display(`<path d="M ${x1} ${y1} v -20 H ${x2} v 20"
-                   stroke="lightgrey" stroke-width="3" fill="none"></path>`);
+    svgCode += `<path d="M ${x1} ${y1} v -20 H ${x2} v 20"
+                      stroke="lightgrey" stroke-width="3" fill="none"></path>`;
 }
 
 function displayChild(x1, x2, y1, y2, dy, x3)
 {
     if (x3 != undefined)
-        display(`<path d="M ${x1} ${y1} v ${dy} H ${x2} V ${y2 - 20} H ${x3} v 20"
-                       stroke="lightgrey" stroke-width="3" fill="none"/>`);
-    // display(`<path d="M ${x1} ${y1} v ${dy} H ${x2} V ${y2}" stroke="black" stroke-width="5" fill="none"/>`);
-    display(`<path d="M ${x1} ${y1} v ${dy} H ${x2} V ${y2}" stroke="lightgrey" stroke-width="3" fill="none"/>`);
+        svgCode += `<path d="M ${x1} ${y1} v ${dy} H ${x2} V ${y2 - 20} H ${x3} v 20"
+                          stroke="lightgrey" stroke-width="3" fill="none"/>`;
+
+    svgCode += `<path d="M ${x1} ${y1} v ${dy} H ${x2} V ${y2}" stroke="lightgrey" stroke-width="3" fill="none"/>`;
 }
+
+
+/* Utility function taken from
+   https://stackoverflow.com/questions/23664967/determining-the-svg-viewport-in-global-root-coordinates */
 
 // Given an <svg> element, returns an object with the visible bounds
 // expressed in local viewBox units, e.g.
