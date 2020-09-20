@@ -659,7 +659,7 @@ instructions =
       "- Next episode: Right arrow key or swipe left",
       "- Previous episode: Left arrow key or swipe right"],
      fr:
-     ["Bienvenue sur mon guide sans spoiler des charactères de la série Dark.",
+     ["Bienvenue sur mon guide sans spoiler des personnages de la série Dark.",
       "- Épisode suivant : Flèche droite du clavier ou swipe à gauche",
       "- Épisode précédent : Flèche gauche du clavier or swipe à droite"]
     }

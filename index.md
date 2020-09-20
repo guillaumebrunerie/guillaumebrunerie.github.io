@@ -5,8 +5,7 @@
 
 <div id="navbar">
 * [About me]
-* [CV, papers, talks](#curriculum-vitae-papers-and-talks)
-* [Other interests]
+* [Academia]
 * [Contact]
 </div>
 </header>
@@ -16,29 +15,33 @@
 About me
 ========
 
-![](picture.jpg)
+![](picture2.jpg)
 
-My name is Guillaume Brunerie and I’m a researcher in mathematics and computer science interested in
-game development and programming.
+My name is Guillaume Brunerie and I’m a researcher (in mathematics/computer
+science) and game developer based in Stockholm.
 
-I am currently a postdoctoral researcher in
+I was previously employed as a postdoctoral researcher at
 [Stockholm University](https://www.math.su.se/english/research/research-groups/research-group-in-mathematical-logic-1.330078){.secondarylink}
-since September 2018 where I’m working mainly on *homotopy type theory*, a field combining
-mathematics (in particular homotopy theory, category theory, and constructive mathematics) with
-computer science (in particular type theory, logic, and proof assistants).
-
-Previously, I was a postdoctoral member of the
+from 2018 to 2020, as a postdoctoral member of the
 [Institute for Advanced Study](https://www.math.ias.edu/){.secondarylink} in Princeton, New Jersey,
-USA, and before that a PhD student in the
+USA from 2016 to 2018, and as a PhD student at the
 [University of Nice Sophia Antipolis](http://math.unice.fr/laboratoire/pr%C3%A9sentation-du-laboratoire){.secondarylink}
-in France.
+in France from 2013 to 2016.
 
-<small>(last updated in August 2020)</small>
+My academic research focuses on *homotopy type theory*, a field combining mathematics (in particular
+homotopy theory, category theory, and constructive mathematics) with computer science (in particular
+type theory, logic, and proof assistants).
+
+I’m also interested in game development, and in programming more generally. You can play most of the
+games I’ve made on [my itch.io page](https://latcarf.itch.io), and find some others of my projects on
+[my GitHub page](https://github.com/guillaumebrunerie).
+
+<small>(last updated in September 2020)</small>
 </section>
 
 <section>
-Curriculum Vitae, papers and talks
-==================================
+Academia
+========
 
 CV
 --
@@ -95,6 +98,8 @@ Preprints and other writings of interest
 Slides of talks
 ---------------
 
+* [*Initiality for Martin-Löf type theory*](pdf/initialityHoTTEST.pdf), with Peter Lumsdaine (slides
+  are for my part only), HoTTEST Seminar, September 2020
 * [*A formalization of the initiality conjecture in Agda*](pdf/initiality.pdf), Homotopy Type Theory
   2019 Conference, Carnegie Mellon University, Pittsburgh, Pennsylvania, August 2019
 * [*Formalization in Agda (part I only)*](pdf/SummerSchool1.pdf), Homotopy Type Theory 2019 Summer
@@ -160,20 +165,9 @@ Others writings
 </section>
 
 <section>
-Other interests
-===============
-
-I’m also interested in programming and free software, and I have some experience with various
-programming languages like Javascript, Python, Lua, OCaml, C, shell scripting, Haskell. Some of my
-projects are available on [my GitHub page](https://github.com/guillaumebrunerie). I’m also
-interested in game development, you can find the few games I’ve made on [my itch.io
-page](https://latcarf.itch.io).
-</section>
-
-<section>
 Contact
 =======
 
-You can contact me by email at the address <guillaume.brunerie@gmail.com> or <brunerie@math.su.se>.
+You can contact me by email at the address <guillaume.brunerie@gmail.com>.
 </section>
 </div>
