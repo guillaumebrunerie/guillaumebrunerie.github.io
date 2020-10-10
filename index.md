@@ -17,26 +17,27 @@ About me
 
 ![](picture2.jpg)
 
-My name is Guillaume Brunerie and I’m a researcher (in mathematics/computer
-science) and game developer based in Stockholm.
+My name is Guillaume Brunerie and I’m a game developer at
+[ELK Studios](https://www.elk-studios.com){.secondarylink} in Stockholm since October 2020.
 
-I was previously employed as a postdoctoral researcher at
+You can try out ELK Studios’ games [here](https://www.elk-studios.com/games/){.secondarylink} and
+play my other games (developed independently) on [my itch.io page](https://latcarf.itch.io).
+Finally, you can find some of my other projects on
+[my GitHub page](https://github.com/guillaumebrunerie).
+
+I was previously doing research in mathematics/computer science, focusing on *homotopy type theory*,
+a field combining mathematics (in particular homotopy theory, category theory, and constructive
+mathematics) with computer science (in particular type theory, logic, and proof assistants).
+
+I was a postdoc at
 [Stockholm University](https://www.math.su.se/english/research/research-groups/research-group-in-mathematical-logic-1.330078){.secondarylink}
-from 2018 to 2020, as a postdoctoral member of the
+from 2018 to 2020, a postdoctoral member of the
 [Institute for Advanced Study](https://www.math.ias.edu/){.secondarylink} in Princeton, New Jersey,
-USA from 2016 to 2018, and as a PhD student at the
+USA from 2016 to 2018, and a PhD student at the
 [University of Nice Sophia Antipolis](http://math.unice.fr/laboratoire/pr%C3%A9sentation-du-laboratoire){.secondarylink}
 in France from 2013 to 2016.
 
-My academic research focuses on *homotopy type theory*, a field combining mathematics (in particular
-homotopy theory, category theory, and constructive mathematics) with computer science (in particular
-type theory, logic, and proof assistants).
-
-I’m also interested in game development, and in programming more generally. You can play most of the
-games I’ve made on [my itch.io page](https://latcarf.itch.io), and find some others of my projects on
-[my GitHub page](https://github.com/guillaumebrunerie).
-
-<small>(last updated in September 2020)</small>
+<small>(last updated in October 2020)</small>
 </section>
 
 <section>
@@ -130,8 +131,14 @@ Slides of talks
 Videos of talks
 ---------------
 
+* [*Initiality for Martin-Löf type theory*](https://youtu.be/1ogUFFUfU_M), together with Peter
+  Lumsdaine (my part starts at [36:05](https://youtu.be/1ogUFFUfU_M?t=2165)), for the electronic seminar
+  [HoTTEST](https://www.uwo.ca/math/faculty/kapulkin/seminars/hottest.html){.secondarylink},
+  September 2020
 * [*Computer-generated proofs for the monoidal structure of the smash product*](https://youtu.be/JEUvWyd1mTk), for the
-  electronic seminar [HoTTEST](https://www.uwo.ca/math/faculty/kapulkin/seminars/hottest.html){.secondarylink}
+  electronic seminar
+  [HoTTEST](https://www.uwo.ca/math/faculty/kapulkin/seminars/hottest.html){.secondarylink},
+  November 2018
 * [*Homotopy type theory: working invariantly in homotopy theory*](https://video.ias.edu/postdoc/2017/0926-GuillaumeBrunerie),
   Short talks by postdoctoral members, School of Mathematics, IAS, Princeton, New Jersey, September 2017
 * [*Invariant homotopy theory in the univalent foundations*](https://video.ias.edu/shorttalks/2016/0928-GuillaumeBrunerie),
@@ -169,5 +176,7 @@ Contact
 =======
 
 You can contact me by email at the address <guillaume.brunerie@gmail.com>.
+
+For professional emails related to ELK Studios, please use <guillaume.brunerie@elk-studios.com> instead.
 </section>
 </div>
