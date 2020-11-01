@@ -37,7 +37,7 @@ USA from 2016 to 2018, and a PhD student at the
 [University of Nice Sophia Antipolis](http://math.unice.fr/laboratoire/pr%C3%A9sentation-du-laboratoire){.secondarylink}
 in France from 2013 to 2016.
 
-<small>(last updated in October 2020)</small>
+<small>(last updated in November 2020)</small>
 </section>
 
 <section>
