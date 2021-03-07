@@ -37,7 +37,7 @@ USA from 2016 to 2018, and a PhD student at the
 [University of Nice Sophia Antipolis](http://math.unice.fr/laboratoire/pr%C3%A9sentation-du-laboratoire){.secondarylink}
 in France from 2013 to 2016.
 
-<small>(last updated in January 2021)</small>
+<small>(last updated in March 2021)</small>
 </section>
 
 <section>
@@ -175,8 +175,7 @@ Others writings
 Contact
 =======
 
-You can contact me by email at the address <guillaume.brunerie@gmail.com>.
-
-For professional emails related to ELK Studios, please use <guillaume.brunerie@elk-studios.com> instead.
+You can contact me by email at the address <guillaume.brunerie@gmail.com> (or
+<guillaume.brunerie@elk-studios.com> for emails related to ELK Studios).
 </section>
 </div>
