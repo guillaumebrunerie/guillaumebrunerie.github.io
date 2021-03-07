@@ -177,5 +177,6 @@ Contact
 
 You can contact me by email at the address <guillaume.brunerie@gmail.com> (or
 <guillaume.brunerie@elk-studios.com> for emails related to ELK Studios).
+
 </section>
 </div>
