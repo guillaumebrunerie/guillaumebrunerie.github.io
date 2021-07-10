@@ -17,7 +17,7 @@ About me
 
 ![](picture2.jpg)
 
-My name is Guillaume Brunerie and I’m a game developer at
+My name is Guillaume Brunerie and I’m a game client and tools developer at
 [ELK Studios](https://www.elk-studios.com){.secondarylink} in Stockholm since October 2020.
 
 You can try out ELK Studios’ games [here](https://www.elk-studios.com/games/){.secondarylink} and
@@ -37,7 +37,7 @@ USA from 2016 to 2018, and a PhD student at the
 [University of Nice Sophia Antipolis](http://math.unice.fr/laboratoire/pr%C3%A9sentation-du-laboratoire){.secondarylink}
 in France from 2013 to 2016.
 
-<small>(last updated in April 2021)</small>
+<small>(last updated in July 2021)</small>
 </section>
 
 <section>
@@ -91,7 +91,7 @@ Preprints and other writings of interest
 * [*Synthetic Cohomology Theory in Cubical Agda*](pdf/zcohomology.pdf)
   ([code](https://github.com/agda/cubical/blob/master/Cubical/Papers/ZCohomology.agda)). Guillaume
   Brunerie, Anders Mörtberg, Axel Ljungström. Preprint.
-* [*Cartesian Cubical Type Theory*](pdf/cart-cube.pdf). Carlo
+* [*Syntax and Models of Cartesian Cubical Type Theory*](pdf/cart-cube.pdf). Carlo
   Angiuli, Guillaume Brunerie, Thierry Coquand, Kuen-Bang Hou (Favonia), Robert Harper, Daniel R. Licata. 
   Preprint.
 * [*The Steenrod squares in homotopy type theory (extended abstract)*](http://types2017.elte.hu/proc.pdf#page=45).
