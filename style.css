@@ -4,6 +4,10 @@ body {
     margin:0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 #main {
     max-width:60em;
     margin-left:auto;
