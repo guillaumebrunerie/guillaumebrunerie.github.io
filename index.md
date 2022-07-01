@@ -17,8 +17,9 @@ About me
 
 ![](picture2.jpg)
 
-My name is Guillaume Brunerie and I’m a game client and tools developer at
-[ELK Studios](https://www.elk-studios.com){.secondarylink} in Stockholm since October 2020.
+My name is Guillaume Brunerie and I’m a game developer at [ELK
+Studios](https://www.elk-studios.com){.secondarylink} in Stockholm since October 2020. I am working
+on developping new animation tools and on programming new games on both the logic and client sides.
 
 You can try out ELK Studios’ games [here](https://www.elk-studios.com/games/){.secondarylink} and
 play my other games (developed independently) on [my itch.io page](https://latcarf.itch.io).
@@ -37,7 +38,7 @@ USA from 2016 to 2018, and a PhD student at the
 [University of Nice Sophia Antipolis](http://math.unice.fr/laboratoire/pr%C3%A9sentation-du-laboratoire){.secondarylink}
 in France from 2013 to 2016.
 
-<small>(last updated in October 2021)</small>
+<small>(last updated in 2022)</small>
 </section>
 
 <section>
@@ -72,7 +73,17 @@ Publications
 [comment]: # (Journal and editor)
 [comment]: # (DOI)
 
-* [*The James construction and $\pi_4(\mathbb{S}^3)$ in homotopy type theory*](https://arxiv.org/abs/1710.10307).
+
+* [*Synthetic Cohomology Theory in Cubical Agda*](pdf/LIPIcs-CSL-2022-11.pdf)
+  ([code](https://github.com/agda/cubical/blob/master/Cubical/Papers/ZCohomology.agda)). Guillaume
+  Brunerie, Anders Mörtberg, Axel Ljungström.
+  30th EACSL Annual Conference on Computer Science Logic (CSL 2022)
+  [doi:10.4230/LIPIcs.CSL.2022.11](https://doi.org/10.4230/LIPIcs.CSL.2022.11){.secondarylink}.
+* [*Syntax and Models of Cartesian Cubical Type Theory*](pdf/cart-cube.pdf). Carlo
+  Angiuli, Guillaume Brunerie, Thierry Coquand, Robert Harper, Kuen-Bang Hou (Favonia), Daniel R. Licata. 
+  Mathematical Structures in Computer Science, Volume 31, Issue 4, April 2021, pages 424–468.
+  [doi:10.1017/S0960129521000347](https://doi.org/10.1017/S0960129521000347){.secondarylink}.
+* [*The James construction and $\pi_4(\mathbb{S}^3)$ in homotopy type theory*](https://arxiv.org/pdf/1710.10307.pdf).
   Guillaume Brunerie.
   Journal of Automated Reasoning, Special Issue on Homotopy Type Theory and Univalent Foundations, Springer.
   [doi:10.1007/s10817-018-9468-2](https://doi.org/10.1007/s10817-018-9468-2){.secondarylink}.
@@ -88,12 +99,6 @@ Publications
 Preprints and other writings of interest
 ----------------------------------------
 
-* [*Synthetic Cohomology Theory in Cubical Agda*](pdf/zcohomology.pdf)
-  ([code](https://github.com/agda/cubical/blob/master/Cubical/Papers/ZCohomology.agda)). Guillaume
-  Brunerie, Anders Mörtberg, Axel Ljungström. Preprint.
-* [*Syntax and Models of Cartesian Cubical Type Theory*](pdf/cart-cube.pdf). Carlo
-  Angiuli, Guillaume Brunerie, Thierry Coquand, Kuen-Bang Hou (Favonia), Robert Harper, Daniel R. Licata. 
-  Preprint.
 * [*The Steenrod squares in homotopy type theory (extended abstract)*](http://types2017.elte.hu/proc.pdf#page=45).
   Guillaume Brunerie. TYPES 2017
 * [*Homotopy Type Theory: Univalent Foundations of Mathematics*](https://homotopytypetheory.org/book/).

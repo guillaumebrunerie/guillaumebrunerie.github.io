@@ -96,15 +96,15 @@ p {
 }
 
 #main a:hover {
-    text-shadow: 0px 0px 3px #44F;
+    text-shadow: 0 0 10px #44F;
 }
 
 #main a.secondarylink {
-    color: #050;
+    color: #080;
 }
 
 #main a.secondarylink:hover {
-    text-shadow: 0px 0px 3px #020;
+    text-shadow: 0 0 10px #080;
 }
 
 #main img {
