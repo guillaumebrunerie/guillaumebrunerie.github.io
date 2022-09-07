@@ -76,7 +76,7 @@ Publications
 
 * [*Synthetic Cohomology Theory in Cubical Agda*](pdf/LIPIcs-CSL-2022-11.pdf)
   ([code](https://github.com/agda/cubical/blob/master/Cubical/Papers/ZCohomology.agda)). Guillaume
-  Brunerie, Anders Mörtberg, Axel Ljungström.
+  Brunerie, Axel Ljungström, Anders Mörtberg.
   30th EACSL Annual Conference on Computer Science Logic (CSL 2022)
   [doi:10.4230/LIPIcs.CSL.2022.11](https://doi.org/10.4230/LIPIcs.CSL.2022.11){.secondarylink}.
 * [*Syntax and Models of Cartesian Cubical Type Theory*](pdf/cart-cube.pdf). Carlo
