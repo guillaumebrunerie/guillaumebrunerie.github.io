@@ -17,9 +17,9 @@ About me
 
 ![](picture2.jpg)
 
-My name is Guillaume Brunerie and I’m a game developer at [ELK
-Studios](https://www.elk-studios.com){.secondarylink} in Stockholm since October 2020. I am working
-on developping new animation tools and on programming new games on both the logic and client sides.
+My name is Guillaume Brunerie and I’m a developer at [ELK
+Studios](https://www.elk-studios.com){.secondarylink} in Stockholm since October 2020. I have been
+working on developping internal tools and on programming games on both the logic and client sides.
 
 You can try out ELK Studios’ games [here](https://www.elk-studios.com/games/){.secondarylink} and
 play my other games (developed independently) on [my itch.io page](https://latcarf.itch.io).
@@ -38,7 +38,7 @@ USA from 2016 to 2018, and a PhD student at the
 [University of Nice Sophia Antipolis](http://math.unice.fr/laboratoire/pr%C3%A9sentation-du-laboratoire){.secondarylink}
 in France from 2013 to 2016.
 
-<small>(last updated in 2022)</small>
+<small>(last updated in 2023)</small>
 </section>
 
 <section>
@@ -183,8 +183,8 @@ Others writings
 Contact
 =======
 
-You can contact me by email at the address <guillaume.brunerie@gmail.com> (or
-<guillaume.brunerie@elk-studios.com> for emails related to ELK Studios).
+You can contact me by email at the address <guillaume.brunerie@gmail.com>. Note that I do not have
+the time or desire to referee academic papers anymore, no matter how interesting they are.
 
 </section>
 </div>
