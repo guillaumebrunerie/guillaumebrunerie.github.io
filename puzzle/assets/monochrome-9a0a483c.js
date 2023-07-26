@@ -1,0 +1,1 @@
+const T={type:"coloredSquares",size:3,pieces:["^^^^_TPTP","^^^v_TPTP","^^^v_PTPT","^^vv_TPTP","^^vv_PTPT","^v^v_PTPT","^vvv_TPTP","^vvv_PTPT","vvvv_TPTP"],background:["TTTTTTT","TTTTTTT","TTTTTTT","TTTTTTT"]};export{T as default};
