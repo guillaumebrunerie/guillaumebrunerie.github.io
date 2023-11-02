@@ -1,22 +1,25 @@
+// Programmed in 1.5 hour, sorry for the mess
+
 "use strict";
 
 const state = {
-	selected: null,
+	selected: {x: 0, y: 0},
 	grid: [
-		[{v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}],
-		[{v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}],
-		[{v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}],
-		[{v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}],
-		[{v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}],
-		[{v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}],
-		[{v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}],
-		[{v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}],
-		[{v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}, {v: null}],
+		[{v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}],
+		[{v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}],
+		[{v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}],
+		[{v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}],
+		[{v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}],
+		[{v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}],
+		[{v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}],
+		[{v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}],
+		[{v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}, {v: []}],
 	],
+	past: [],
 	locked: false,
 };
 
-const render = () => {
+const fullRender = () => {
 	document.body.innerHTML = ""
 	// Grid
 	const grid = document.createElement("div");
@@ -26,6 +29,7 @@ const render = () => {
 		for (let x = 0; x < 9; x++) {
 			const cell = document.createElement("div");
 			cell.className = "cell";
+			cell.id = `cell-${x}-${y}`;
 			if (x % 3 == 0) {
 				cell.className += " left";
 			}
@@ -38,15 +42,7 @@ const render = () => {
 			if (y % 3 == 2) {
 				cell.className += " bottom";
 			}
-			if (x == state.selected?.x && y == state.selected?.y) {
-				cell.className += " selected";
-			}
-			if (state.grid[y][x].isLocked) {
-				cell.className += " locked";
-			}
-			const v = state.grid[y][x].v || "";
-			cell.innerText = v;
-			cell.addEventListener("click", () => select(x, y))
+			cell.addEventListener("touchstart", () => select(x, y))
 			grid.appendChild(cell);
 		}
 	}
@@ -55,25 +51,71 @@ const render = () => {
 	const subgrid = document.createElement("div");
 	subgrid.id = "subgrid";
 	document.body.appendChild(subgrid);
-	for (let y = 0; y < 3; y++) {
+	for (let y = 0; y < 4; y++) {
 		for (let x = 0; x < 3; x++) {
 			const cell = document.createElement("div");
-			cell.className = "cell";
 			const v = y * 3 + x + 1;
-			cell.innerText = v;
-			cell.addEventListener("click", () => toggle(v))
+			if (y < 3 || x == 1) {
+				cell.className = "cell";
+				if (y < 3) {
+					cell.innerText = v;
+				} else {
+					cell.innerText = "-";
+				}
+			}
+			cell.addEventListener("touchstart", () => toggle(v))
 			subgrid.appendChild(cell);
 		}
 	}
 
-	// Lock
-	const lock = document.createElement("div");
-	lock.id = "lock";
-	if (!state.locked) {
-		lock.innerText = "Lock";
+	// Button
+	const button = document.createElement("div");
+	button.id = "button";
+	button.addEventListener("touchstart", () => clickButton())
+	document.body.appendChild(button);
+
+	render();
+}
+
+const render = () => {
+	// Grid
+	for (let y = 0; y < 9; y++) {
+		for (let x = 0; x < 9; x++) {
+			const cell = document.getElementById(`cell-${x}-${y}`);
+			const classes = cell.className.split(" ").filter(c => c !== "selected" && c !== "locked" && c !== "multiple");
+			if (x == state.selected?.x && y == state.selected?.y) {
+				classes.push("selected");
+			}
+			if (state.grid[y][x].isLocked) {
+				classes.push("locked");
+			}
+			const vs = state.grid[y][x].v;
+			if (vs.length == 0) {
+				cell.innerText = "";
+			} else if (vs.length == 1) {
+				cell.innerText = vs[0];
+			} else {
+				classes.push("multiple");
+				cell.innerHTML = "";
+				for (let y = 0; y < 3; y++) {
+					for (let x = 0; x < 3; x++) {
+						const subcell = document.createElement("div");
+						subcell.className = "subcell";
+						const v = y * 3 + x + 1;
+						if (vs.includes(v)) {
+							subcell.innerText = v;
+						}
+						cell.appendChild(subcell);
+					}
+				}
+			}
+			cell.className = classes.join(" ");
+		}
 	}
-	lock.addEventListener("click", () => doLock())
-	document.body.appendChild(lock);
+
+	// Button
+	const button = document.getElementById("button");
+	button.innerText = state.locked ? "Undo" : "Lock";
 }
 
 const select = (x, y) => {
@@ -85,26 +127,50 @@ const select = (x, y) => {
 }
 
 const toggle = (v) => {
+	state.past.push(structuredClone({
+		selected: state.selected,
+		grid: state.grid,
+	}));
 	const {x, y} = state.selected;
-	if (state.grid[y][x].v == v) {
-		state.grid[y][x].v = null;
+	if (v == 11) {
+		state.grid[y][x].v = [];
+	} else if (state.grid[y][x].v.includes(v)) {
+		state.grid[y][x].v = state.grid[y][x].v.filter(x => x !== v);
 	} else {
-		state.grid[y][x].v = v;
+		state.grid[y][x].v.push(v);
 	}
 	render();
+}
+
+const clickButton = () => {
+	if (state.locked) {
+		doUndo();
+	} else {
+		doLock();
+	}
 }
 
 const doLock = () => {
 	for (let y = 0; y < 9; y++) {
 		for (let x = 0; x < 9; x++) {
-			if (state.grid[y][x].v) {
+			if (state.grid[y][x].v.length > 0) {
 				state.grid[y][x].isLocked = true;
 			}
 		}
 	}
 	state.selected = null;
 	state.locked = true;
+	state.past = [];
 	render();
 }
 
-render();
+const doUndo = () => {
+	if (state.past.length > 0) {
+		const {grid, selected} = state.past.pop();
+		state.grid = grid;
+		state.selected = selected;
+	}
+	fullRender();
+}
+
+fullRender();
