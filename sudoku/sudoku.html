@@ -1,0 +1,67 @@
+<!doctype html>
+<head>
+  <style type="text/css">
+    body {
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 0.5fr;
+    }
+    #grid {
+    display: grid;
+    aspect-ratio: 1;
+    margin: 5rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    border: 3px solid black;
+    }
+    #lock {
+    font-size: 4rem;
+    text-align: center;
+    }
+    .cell {
+    border: 1px solid black;
+    text-align: center;
+    color: grey;
+    }
+    .cell.locked, #subgrid .cell {
+    color: black;
+    }
+    #subgrid .cell {
+    font-size: 10rem;
+    }
+    #grid .cell {
+    font-size: 4rem;
+    }
+    .right {
+    border-right: 3px solid black;
+    }
+    .bottom {
+    border-bottom: 3px solid black;
+    }
+    .top {
+    border-top: 3px solid black;
+    }
+    .left {
+    border-left: 3px solid black;
+    }
+    .selected {
+    background-color: #ffffb0;
+    }
+    #subgrid {
+    display: grid;
+    aspect-ratio: 1;
+    gap: 2rem;
+    margin: 10rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="grid">
+    </div>
+  </div>
+  <script type="text/javascript" src="./sudoku.js"></script>
+</body>
