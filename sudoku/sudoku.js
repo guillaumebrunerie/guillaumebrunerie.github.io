@@ -1,4 +1,4 @@
-// Programmed in 1.5 hour, sorry for the mess
+// Programmed in less than two hours, sorry for the mess
 
 "use strict";
 
