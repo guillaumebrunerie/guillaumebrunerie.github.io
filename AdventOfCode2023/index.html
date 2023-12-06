@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <link rel="icon" href="data:,">
+  <style>
+    html, body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background-color: black;
+        display: grid;
+        grid-template-rows: 1fr 50px;
+    }
+    #videoContainer {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+    }
+    video {
+        width: 90%;
+        heigth: 90%;
+    }
+    #controls {
+        display: grid;
+        /* grid-template-columns: 1fr 1fr; */
+        /* justify-content: space-between; */
+    }
+    #controlPrevious {
+        position: absolute;
+        left: 0;
+    }
+    #controlNext {
+        position: absolute;
+        right: 0;
+    }
+    a {
+        height: 50px;
+        cursor: pointer;
+        background: black;
+        color: white;
+        border: none;
+    }
+  </style>
+  <title>Advent of Code 2023 – Visualizations</title>
+</head>
+
+<body>
+  <div id="videoContainer">
+    <video loop controls>
+      <source id="videoSource" type="video/mp4" />
+    </video>
+  </div>
+  <div id="controls">
+    <a id="controlPrevious">Previous day</a>
+    <a id="controlNext">Next day</a>
+  </div>
+  <script>
+    const day = Number((new URLSearchParams(window.location.search)).get("day"));
+    if (isNaN(day) || day < 1 || day > 25) {
+      day = 1;
+    }
+    document.querySelector("#videoSource").src = `Day${day}.mp4#t=15.95`;
+    document.querySelector("#controlPrevious").href = `?day=${day-1}`;
+    document.querySelector("#controlNext").href = `?day=${day+1}`;
+  </script>
+</body>
+
+</html>
