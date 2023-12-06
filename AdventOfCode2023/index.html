@@ -61,7 +61,7 @@
     <a id="controlNext">Next day</a>
   </div>
   <script>
-    const day = Number((new URLSearchParams(window.location.search)).get("day"));
+    let day = Number((new URLSearchParams(window.location.search)).get("day"));
     if (isNaN(day) || day < 1 || day > 25) {
       day = 1;
     }
