@@ -15,7 +15,8 @@
     body {
         background-color: black;
         display: grid;
-        grid-template-rows: 1fr 50px;
+        grid-template-rows: minmax(0, 1fr) 50px;
+        align-items: center;
     }
     #videoContainer {
         display: grid;
@@ -23,28 +24,23 @@
         justify-items: center;
     }
     video {
-        width: 90%;
-        heigth: 90%;
+        max-width: 95%;
+        max-heigth: calc(95vh - 50px);
     }
     #controls {
         display: grid;
-        /* grid-template-columns: 1fr 1fr; */
-        /* justify-content: space-between; */
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-between;
     }
     #controlPrevious {
-        position: absolute;
-        left: 0;
+        text-align: left;
     }
     #controlNext {
-        position: absolute;
-        right: 0;
+        text-align: right;
     }
     a {
-        height: 50px;
         cursor: pointer;
-        background: black;
         color: white;
-        border: none;
     }
   </style>
   <title>Advent of Code 2023 – Visualizations</title>
