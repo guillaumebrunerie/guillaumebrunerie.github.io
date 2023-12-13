@@ -49,20 +49,16 @@
 
 <body>
   <div id="videoContainer">
-    <video loop controls>
-      <source id="videoSource" type="video/mp4" />
-    </video>
+    <iframe width="50000px" height="50000px"
+            src="https://www.youtube.com/embed/jmKmxwNFlJY?si=fsnBLsOPva6sGiPN"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+    </iframe>
   </div>
   <div id="controls">
     <a id="controlPrevious" href="index.html">Back to the visualizations</a>
   </div>
-  <script>
-    let day = Number((new URLSearchParams(window.location.search)).get("day"));
-    if (isNaN(day) || day < 1 || day > 25) {
-      day = 1;
-    }
-    document.querySelector("#videoSource").src = `Day${day}.mp4#t=15.95`;
-  </script>
 </body>
 
 </html>

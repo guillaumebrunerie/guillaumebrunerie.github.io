@@ -22,16 +22,16 @@
       h1, h2 {
           text-align: center;
       }
-      #buttons {
+      .buttons {
           display: flex;
           flex-wrap: wrap;
           gap: 2rem;
           justify-content: center;
           padding: 2rem;
       }
-      #buttons a {
+      .buttons a {
           display: grid;
-          border-radius: 50%;
+          border-radius: 10rem;
           background-color: #222;
           border: 1px solid #CCC;
           height: 10rem;
@@ -44,9 +44,17 @@
           font-size: 2rem;
           text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, 0 0 5px black;
       }
-      #buttons a.disabled {
-          pointer-events: none;
+      .buttons a.disabled {
+          cursor: not-allowed;
+          /*pointer-events: none;*/
           opacity: 30%;
+      }
+      .buttons a.fullvideo {
+          /* color: #00CC00; */
+          background-color: #0F0F23;
+          /* border-color: #00CC00; */
+          width: 20rem;
+          /* flex-grow: 1; */
       }
     </style>
     <title>Advent of Code 2023 – Visualizations</title>
@@ -55,8 +63,10 @@
   <body>
     <h1>Advent of Code 2023</h1>
     <h2>Visualizations by Guillaume Brunerie</h2>
-    <div id="buttons">
-      <a href="video.html?day=Full" style="display: none">Full video</a>
+    <div class="buttons">
+      <a href="fullVideo.html" class="fullvideo">Full video</a>
+    </div>
+    <div class="buttons">
       <a href="video.html?day=1" style="background: 50% 38%/500% url(Day1.png)">Day 1</a>
       <a href="video.html?day=2" style="background: 60%/500% url(Day2.png)">Day 2</a>
       <a href="video.html?day=3" style="background: center/600% url(Day3.png)">Day 3</a>
@@ -69,19 +79,19 @@
       <a href="video.html?day=10" style="background: center/700% url(Day10.png)">Day 10</a>
       <a href="video.html?day=11" style="background: 10% 50%/400% url(Day11.png)">Day 11</a>
       <a href="video.html?day=12" style="background: center/500% url(Day12.png)">Day 12</a>
-      <a href="video.html?day=13" class="disabled">Day 13</a>
-      <a href="video.html?day=14" class="disabled">Day 14</a>
-      <a href="video.html?day=15" class="disabled">Day 15</a>
-      <a href="video.html?day=16" class="disabled">Day 16</a>
-      <a href="video.html?day=17" class="disabled">Day 17</a>
-      <a href="video.html?day=18" class="disabled">Day 18</a>
-      <a href="video.html?day=19" class="disabled">Day 19</a>
-      <a href="video.html?day=20" class="disabled">Day 20</a>
-      <a href="video.html?day=21" class="disabled">Day 21</a>
-      <a href="video.html?day=22" class="disabled">Day 22</a>
-      <a href="video.html?day=23" class="disabled">Day 23</a>
-      <a href="video.html?day=24" class="disabled">Day 24</a>
-      <a href="video.html?day=25" class="disabled">Day 25</a>
+      <a class="disabled">Day 13</a>
+      <a class="disabled">Day 14</a>
+      <a class="disabled">Day 15</a>
+      <a class="disabled">Day 16</a>
+      <a class="disabled">Day 17</a>
+      <a class="disabled">Day 18</a>
+      <a class="disabled">Day 19</a>
+      <a class="disabled">Day 20</a>
+      <a class="disabled">Day 21</a>
+      <a class="disabled">Day 22</a>
+      <a class="disabled">Day 23</a>
+      <a class="disabled">Day 24</a>
+      <a class="disabled">Day 25</a>
     </div>
   </body>
 </html>
