@@ -1,74 +1,87 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <link rel="icon" href="data:,">
+    <style>
+      html, body {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          color: #CCCCCC;
+          font-family: monospace;
+      }
+      a {
+          cursor: pointer;
+          font-weight: bold;
+      }
+      body {
+          background-color: #111;
+      }
+      h1, h2 {
+          text-align: center;
+      }
+      #buttons {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 2rem;
+          justify-content: center;
+          padding: 2rem;
+      }
+      #buttons a {
+          display: grid;
+          border-radius: 50%;
+          background-color: #222;
+          border: 1px solid #CCC;
+          height: 10rem;
+          width: 10rem;
+          text-align: center;
+          align-content: center;
+          justify-content: center;
+          color: #CCCCCC;
+          text-decoration: none;
+          font-size: 2rem;
+          text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, 0 0 5px black;
+      }
+      #buttons a.disabled {
+          pointer-events: none;
+          opacity: 30%;
+      }
+    </style>
+    <title>Advent of Code 2023 – Visualizations</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <link rel="icon" href="data:,">
-  <style>
-    html, body {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    body {
-        background-color: black;
-        display: grid;
-        grid-template-rows: minmax(0, 1fr) 50px;
-        align-items: center;
-    }
-    #videoContainer {
-        display: grid;
-        align-items: center;
-        justify-items: center;
-    }
-    video {
-        max-width: 95%;
-        max-height: calc(95vh - 50px);
-    }
-    #controls {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-content: space-between;
-    }
-    #controlPrevious {
-        text-align: left;
-    }
-    #controlNext {
-        text-align: right;
-    }
-    a {
-        cursor: pointer;
-        color: #CCCCCC;
-        font-weight: bold;
-        padding: 10px;
-        font-family: monospace;
-        font-size: 1rem;
-    }
-  </style>
-  <title>Advent of Code 2023 – Visualizations</title>
-</head>
-
-<body>
-  <div id="videoContainer">
-    <video loop controls>
-      <source id="videoSource" type="video/mp4" />
-    </video>
-  </div>
-  <div id="controls">
-    <a id="controlPrevious">Previous day</a>
-    <a id="controlNext">Next day</a>
-  </div>
-  <script>
-    let day = Number((new URLSearchParams(window.location.search)).get("day"));
-    if (isNaN(day) || day < 1 || day > 25) {
-      day = 1;
-    }
-    document.querySelector("#videoSource").src = `Day${day}.mp4#t=15.95`;
-    document.querySelector("#controlPrevious").href = `?day=${day-1}`;
-    document.querySelector("#controlNext").href = `?day=${day+1}`;
-  </script>
-</body>
-
+  <body>
+    <h1>Advent of Code 2023</h1>
+    <h2>Visualizations by Guillaume Brunerie</h2>
+    <div id="buttons">
+      <a href="video.html?day=Full" style="display: none">Full video</a>
+      <a href="video.html?day=1" style="background: 50% 38%/500% url(Day1.png)">Day 1</a>
+      <a href="video.html?day=2" style="background: 60%/500% url(Day2.png)">Day 2</a>
+      <a href="video.html?day=3" style="background: center/600% url(Day3.png)">Day 3</a>
+      <a href="video.html?day=4" style="background: 10% 95%/500% url(Day4.png)">Day 4</a>
+      <a href="video.html?day=5" style="background: center/500% url(Day5.png)">Day 5</a>
+      <a href="video.html?day=6" style="background: 63% 63%/500% url(Day6.png)">Day 6</a>
+      <a href="video.html?day=7" style="background: 61.5% 63%/550% url(Day7.png)">Day 7</a>
+      <a href="video.html?day=8" style="background: 50% 95%/400% url(Day8.png)">Day 8</a>
+      <a href="video.html?day=9" style="background: 25% 95%/500% url(Day9.png)">Day 9</a>
+      <a href="video.html?day=10" style="background: center/700% url(Day10.png)">Day 10</a>
+      <a href="video.html?day=11" style="background: 10% 50%/400% url(Day11.png)">Day 11</a>
+      <a href="video.html?day=12" style="background: center/500% url(Day12.png)">Day 12</a>
+      <a href="video.html?day=13" class="disabled">Day 13</a>
+      <a href="video.html?day=14" class="disabled">Day 14</a>
+      <a href="video.html?day=15" class="disabled">Day 15</a>
+      <a href="video.html?day=16" class="disabled">Day 16</a>
+      <a href="video.html?day=17" class="disabled">Day 17</a>
+      <a href="video.html?day=18" class="disabled">Day 18</a>
+      <a href="video.html?day=19" class="disabled">Day 19</a>
+      <a href="video.html?day=20" class="disabled">Day 20</a>
+      <a href="video.html?day=21" class="disabled">Day 21</a>
+      <a href="video.html?day=22" class="disabled">Day 22</a>
+      <a href="video.html?day=23" class="disabled">Day 23</a>
+      <a href="video.html?day=24" class="disabled">Day 24</a>
+      <a href="video.html?day=25" class="disabled">Day 25</a>
+    </div>
+  </body>
 </html>
