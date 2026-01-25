@@ -38,7 +38,7 @@ USA from 2016 to 2018, and a PhD student at the
 [University of Nice Sophia Antipolis](http://math.unice.fr/laboratoire/pr%C3%A9sentation-du-laboratoire){.secondarylink}
 in France from 2013 to 2016.
 
-<small>(last updated in 2024)</small>
+<small>(last updated in 2026)</small>
 </section>
 
 <section>
@@ -183,8 +183,7 @@ Others writings
 Contact
 =======
 
-You can contact me by email at the address <guillaume.brunerie@gmail.com>. Note that I do not have
-the time or desire to referee academic papers anymore, no matter how interesting they are.
+You can contact me by email at the address <guillaume.brunerie@gmail.com>.
 
 </section>
 </div>

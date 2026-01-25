@@ -8,10 +8,19 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,71 +47,224 @@
 <section>
 <h1 id="about-me">About me</h1>
 <p><img src="picture2.jpg" /></p>
-<p>My name is Guillaume Brunerie and I’m a developer at <a href="https://www.elk-studios.com" class="secondarylink">ELK Studios</a> in Stockholm since October 2020. I have been working on developping internal tools and on programming games on both the logic and client sides.</p>
-<p>You can try out ELK Studios’ games <a href="https://www.elk-studios.com/games/" class="secondarylink">here</a> and play my other games (developed independently) on <a href="https://latcarf.itch.io">my itch.io page</a>. Finally, you can find some of my other projects on <a href="https://github.com/guillaumebrunerie">my GitHub page</a>.</p>
-<p>I was previously doing research in mathematics/computer science, focusing on <em>homotopy type theory</em>, a field combining mathematics (in particular homotopy theory, category theory, and constructive mathematics) with computer science (in particular type theory, logic, and proof assistants).</p>
-<p>I was a postdoc at <a href="https://www.math.su.se/english/research/research-groups/research-group-in-mathematical-logic-1.330078" class="secondarylink">Stockholm University</a> from 2018 to 2020, a postdoctoral member of the <a href="https://www.math.ias.edu/" class="secondarylink">Institute for Advanced Study</a> in Princeton, New Jersey, USA from 2016 to 2018, and a PhD student at the <a href="http://math.unice.fr/laboratoire/pr%C3%A9sentation-du-laboratoire" class="secondarylink">University of Nice Sophia Antipolis</a> in France from 2013 to 2016.</p>
-<small>(last updated in 2024)</small>
+<p>My name is Guillaume Brunerie and I’m a developer at <a
+href="https://www.elk-studios.com" class="secondarylink">ELK Studios</a>
+in Stockholm since October 2020. I have been working on developping
+internal tools and on programming games on both the logic and client
+sides.</p>
+<p>You can try out ELK Studios’ games <a
+href="https://www.elk-studios.com/games/" class="secondarylink">here</a>
+and play my other games (developed independently) on <a
+href="https://latcarf.itch.io">my itch.io page</a>. Finally, you can
+find some of my other projects on <a
+href="https://github.com/guillaumebrunerie">my GitHub page</a>.</p>
+<p>I was previously doing research in mathematics/computer science,
+focusing on <em>homotopy type theory</em>, a field combining mathematics
+(in particular homotopy theory, category theory, and constructive
+mathematics) with computer science (in particular type theory, logic,
+and proof assistants).</p>
+<p>I was a postdoc at <a
+href="https://www.math.su.se/english/research/research-groups/research-group-in-mathematical-logic-1.330078"
+class="secondarylink">Stockholm University</a> from 2018 to 2020, a
+postdoctoral member of the <a href="https://www.math.ias.edu/"
+class="secondarylink">Institute for Advanced Study</a> in Princeton, New
+Jersey, USA from 2016 to 2018, and a PhD student at the <a
+href="http://math.unice.fr/laboratoire/pr%C3%A9sentation-du-laboratoire"
+class="secondarylink">University of Nice Sophia Antipolis</a> in France
+from 2013 to 2016.</p>
+<small>(last updated in 2026)</small>
 </section>
 <section>
 <h1 id="academia">Academia</h1>
 <h2 id="cv">CV</h2>
 <p>You can find my academic CV <a href="pdf/cv.pdf">here</a>.</p>
 <h2 id="phd-thesis">PhD thesis</h2>
-<p>From September 2013 to August 2016, I was a PhD student at the <a href="http://math.unice.fr/laboratoire/pr%C3%A9sentation-du-laboratoire" class="secondarylink">Laboratoire J.A. Dieudonné</a> under the supervision of <a href="http://math.unice.fr/~carlos/" class="secondarylink">Carlos Simpson</a>. I successfully defended my thesis on June 15th 2016.</p>
+<p>From September 2013 to August 2016, I was a PhD student at the <a
+href="http://math.unice.fr/laboratoire/pr%C3%A9sentation-du-laboratoire"
+class="secondarylink">Laboratoire J.A. Dieudonné</a> under the
+supervision of <a href="http://math.unice.fr/~carlos/"
+class="secondarylink">Carlos Simpson</a>. I successfully defended my
+thesis on June 15th 2016.</p>
 <ul>
-<li><a href="https://arxiv.org/abs/1606.05916"><em>On the homotopy groups of spheres in homotopy type theory</em></a> (187 pages, in English, with a 20-page summary in French at the end). You can also download the <a href="pdf/soutenance.pdf">slides of the oral presentation</a> and the <a href="pdf/poster.pdf">poster</a> (in French, 2015).</li>
+<li><a href="https://arxiv.org/abs/1606.05916"><em>On the homotopy
+groups of spheres in homotopy type theory</em></a> (187 pages, in
+English, with a 20-page summary in French at the end). You can also
+download the <a href="pdf/soutenance.pdf">slides of the oral
+presentation</a> and the <a href="pdf/poster.pdf">poster</a> (in French,
+2015).</li>
 </ul>
 <h2 id="publications">Publications</h2>
 <ul>
-<li><a href="pdf/LIPIcs-CSL-2022-11.pdf"><em>Synthetic Cohomology Theory in Cubical Agda</em></a> (<a href="https://github.com/agda/cubical/blob/master/Cubical/Papers/ZCohomology.agda">code</a>). Guillaume Brunerie, Axel Ljungström, Anders Mörtberg. 30th EACSL Annual Conference on Computer Science Logic (CSL 2022) <a href="https://doi.org/10.4230/LIPIcs.CSL.2022.11" class="secondarylink">doi:10.4230/LIPIcs.CSL.2022.11</a>.</li>
-<li><a href="pdf/cart-cube.pdf"><em>Syntax and Models of Cartesian Cubical Type Theory</em></a>. Carlo Angiuli, Guillaume Brunerie, Thierry Coquand, Robert Harper, Kuen-Bang Hou (Favonia), Daniel R. Licata. Mathematical Structures in Computer Science, Volume 31, Issue 4, April 2021, pages 424–468. <a href="https://doi.org/10.1017/S0960129521000347" class="secondarylink">doi:10.1017/S0960129521000347</a>.</li>
-<li><a href="https://arxiv.org/pdf/1710.10307.pdf"><em>The James construction and <span class="math inline"><em>π</em><sub>4</sub>(𝕊<sup>3</sup>)</span> in homotopy type theory</em></a>. Guillaume Brunerie. Journal of Automated Reasoning, Special Issue on Homotopy Type Theory and Univalent Foundations, Springer. <a href="https://doi.org/10.1007/s10817-018-9468-2" class="secondarylink">doi:10.1007/s10817-018-9468-2</a>.</li>
-<li><a href="pdf/lb15cubicalsynth.pdf"><em>A Cubical Approach to Synthetic Homotopy Theory</em></a>. Dan Licata and Guillaume Brunerie. 2015 30th Annual ACM/IEEE Symposium on Logic in Computer Science (LICS 2015), pages 92–103, IEEE. <a href="https://doi.org/10.1109/LICS.2015.19" class="secondarylink">doi:10.1109/LICS.2015.19</a>.</li>
-<li><a href="pdf/lb13cpp.pdf"><em><span class="math inline"><em>π</em><sub><em>n</em></sub>(<em>S</em><sup><em>n</em></sup>)</span> in Homotopy Type Theory</em></a>. Dan Licata and Guillaume Brunerie. Certified Programs and Proofs (CPP 2013), volume 8307 of Lecture Notes in Computer Science (LNCS), pages 1–16. Springer. <a href="https://doi.org/10.1007/978-3-319-03545-1" class="secondarylink">doi:10.1007/978-3-319-03545-1</a>.</li>
+<li><a href="pdf/LIPIcs-CSL-2022-11.pdf"><em>Synthetic Cohomology Theory
+in Cubical Agda</em></a> (<a
+href="https://github.com/agda/cubical/blob/master/Cubical/Papers/ZCohomology.agda">code</a>).
+Guillaume Brunerie, Axel Ljungström, Anders Mörtberg. 30th EACSL Annual
+Conference on Computer Science Logic (CSL 2022) <a
+href="https://doi.org/10.4230/LIPIcs.CSL.2022.11"
+class="secondarylink">doi:10.4230/LIPIcs.CSL.2022.11</a>.</li>
+<li><a href="pdf/cart-cube.pdf"><em>Syntax and Models of Cartesian
+Cubical Type Theory</em></a>. Carlo Angiuli, Guillaume Brunerie, Thierry
+Coquand, Robert Harper, Kuen-Bang Hou (Favonia), Daniel R. Licata.
+Mathematical Structures in Computer Science, Volume 31, Issue 4, April
+2021, pages 424–468. <a href="https://doi.org/10.1017/S0960129521000347"
+class="secondarylink">doi:10.1017/S0960129521000347</a>.</li>
+<li><a href="https://arxiv.org/pdf/1710.10307.pdf"><em>The James
+construction and <span
+class="math inline"><em>π</em><sub>4</sub>(𝕊<sup>3</sup>)</span> in
+homotopy type theory</em></a>. Guillaume Brunerie. Journal of Automated
+Reasoning, Special Issue on Homotopy Type Theory and Univalent
+Foundations, Springer. <a
+href="https://doi.org/10.1007/s10817-018-9468-2"
+class="secondarylink">doi:10.1007/s10817-018-9468-2</a>.</li>
+<li><a href="pdf/lb15cubicalsynth.pdf"><em>A Cubical Approach to
+Synthetic Homotopy Theory</em></a>. Dan Licata and Guillaume Brunerie.
+2015 30th Annual ACM/IEEE Symposium on Logic in Computer Science (LICS
+2015), pages 92–103, IEEE. <a
+href="https://doi.org/10.1109/LICS.2015.19"
+class="secondarylink">doi:10.1109/LICS.2015.19</a>.</li>
+<li><a href="pdf/lb13cpp.pdf"><em><span
+class="math inline"><em>π</em><sub><em>n</em></sub>(<em>S</em><sup><em>n</em></sup>)</span>
+in Homotopy Type Theory</em></a>. Dan Licata and Guillaume Brunerie.
+Certified Programs and Proofs (CPP 2013), volume 8307 of Lecture Notes
+in Computer Science (LNCS), pages 1–16. Springer. <a
+href="https://doi.org/10.1007/978-3-319-03545-1"
+class="secondarylink">doi:10.1007/978-3-319-03545-1</a>.</li>
 </ul>
-<h2 id="preprints-and-other-writings-of-interest">Preprints and other writings of interest</h2>
+<h2 id="preprints-and-other-writings-of-interest">Preprints and other
+writings of interest</h2>
 <ul>
-<li><a href="http://types2017.elte.hu/proc.pdf#page=45"><em>The Steenrod squares in homotopy type theory (extended abstract)</em></a>. Guillaume Brunerie. TYPES 2017</li>
-<li><a href="https://homotopytypetheory.org/book/"><em>Homotopy Type Theory: Univalent Foundations of Mathematics</em></a>. The Univalent Foundations Program (collective book), Institute for Advanced Study, 2013</li>
+<li><a href="http://types2017.elte.hu/proc.pdf#page=45"><em>The Steenrod
+squares in homotopy type theory (extended abstract)</em></a>. Guillaume
+Brunerie. TYPES 2017</li>
+<li><a href="https://homotopytypetheory.org/book/"><em>Homotopy Type
+Theory: Univalent Foundations of Mathematics</em></a>. The Univalent
+Foundations Program (collective book), Institute for Advanced Study,
+2013</li>
 </ul>
 <h2 id="slides-of-talks">Slides of talks</h2>
 <ul>
-<li><a href="pdf/initialityHoTTEST.pdf"><em>Initiality for Martin-Löf type theory</em></a>, with Peter Lumsdaine (slides are for my part only), HoTTEST Seminar, September 2020</li>
-<li><a href="pdf/initiality.pdf"><em>A formalization of the initiality conjecture in Agda</em></a>, Homotopy Type Theory 2019 Conference, Carnegie Mellon University, Pittsburgh, Pennsylvania, August 2019</li>
-<li><a href="pdf/SummerSchool1.pdf"><em>Formalization in Agda (part I only)</em></a>, Homotopy Type Theory 2019 Summer School, Carnegie Mellon University, Pittsburgh, Pennsylvania, August 2019</li>
-<li><a href="pdf/monoidalsmashproduct.pdf"><em>Computer-generated proofs for the monoidal structure of the smash product</em></a>, HoTTEST Seminar, November 2018</li>
-<li><a href="pdf/cubicalexperiments.pdf"><em>Experiments in cubical type theory</em></a>, Joint Mathematics Meetings, AMS Special Session on Homotopy Type Theory (a Mathematics Research Communities Session), San Diego, California, January 2018</li>
-<li><a href="pdf/shorttalk2.pdf"><em>Homotopy type theory: working invariantly in homotopy theory</em></a>, Short talks by postdoctoral members, School of Mathematics, IAS, Princeton, New Jersey, September 2017</li>
-<li><a href="pdf/shorttalk.pdf"><em>Invariant homotopy theory in the univalent foundations</em></a>, Short talks by postdoctoral members, School of Mathematics, IAS, Princeton, New Jersey, September 2016</li>
-<li><a href="pdf/talkicms.pdf"><em>Custom definitional equalities in Agda</em></a>, in the “<a href="https://icms2016unimath.github.io/mainpage" class="secondarylink">Univalent Foundations and Proof Assistants</a>” session of the International Congress on Mathematical Software (ICMS 2016), Berlin, Germany, July 2016</li>
-<li><a href="pdf/lics15.pdf"><em>A Cubical Approach to Synthetic Homotopy Theory</em></a>, at <a href="http://lics.rwth-aachen.de/lics15/" class="secondarylink">LICS 2015</a>, Kyoto, Japan, July 2015</li>
-<li><a href="pdf/talkJFLA.pdf"><em>Homotopy Type Theory</em></a>, at the conference “<a href="http://jfla.inria.fr/2014/" class="secondarylink">Journées francophones des languages applicatifs</a>”, Fréjus, France, January 2014</li>
-<li><a href="pdf/cmssm13.pdf"><em>An elementary definition of weak <span class="math inline">∞</span>-groupoids</em></a>, in the session “<a href="https://cms.math.ca/Events/summer13/sessions_scientific#pih" class="secondarylink">Progress in Higher Categories</a>” of the CMS Summer Meeting, Halifax, Nova-Scotia, Canada, June 2013</li>
-<li><a href="pdf/TheoremeDeCompletude.pdf"><em>Le théorème de complétude de Gödel</em></a> (in French), in the “Séminaire de mathématiques des élèves du lycée Louis le Grand”, Paris, France, February 2009</li>
+<li><a href="pdf/initialityHoTTEST.pdf"><em>Initiality for Martin-Löf
+type theory</em></a>, with Peter Lumsdaine (slides are for my part
+only), HoTTEST Seminar, September 2020</li>
+<li><a href="pdf/initiality.pdf"><em>A formalization of the initiality
+conjecture in Agda</em></a>, Homotopy Type Theory 2019 Conference,
+Carnegie Mellon University, Pittsburgh, Pennsylvania, August 2019</li>
+<li><a href="pdf/SummerSchool1.pdf"><em>Formalization in Agda (part I
+only)</em></a>, Homotopy Type Theory 2019 Summer School, Carnegie Mellon
+University, Pittsburgh, Pennsylvania, August 2019</li>
+<li><a href="pdf/monoidalsmashproduct.pdf"><em>Computer-generated proofs
+for the monoidal structure of the smash product</em></a>, HoTTEST
+Seminar, November 2018</li>
+<li><a href="pdf/cubicalexperiments.pdf"><em>Experiments in cubical type
+theory</em></a>, Joint Mathematics Meetings, AMS Special Session on
+Homotopy Type Theory (a Mathematics Research Communities Session), San
+Diego, California, January 2018</li>
+<li><a href="pdf/shorttalk2.pdf"><em>Homotopy type theory: working
+invariantly in homotopy theory</em></a>, Short talks by postdoctoral
+members, School of Mathematics, IAS, Princeton, New Jersey, September
+2017</li>
+<li><a href="pdf/shorttalk.pdf"><em>Invariant homotopy theory in the
+univalent foundations</em></a>, Short talks by postdoctoral members,
+School of Mathematics, IAS, Princeton, New Jersey, September 2016</li>
+<li><a href="pdf/talkicms.pdf"><em>Custom definitional equalities in
+Agda</em></a>, in the “<a
+href="https://icms2016unimath.github.io/mainpage"
+class="secondarylink">Univalent Foundations and Proof Assistants</a>”
+session of the International Congress on Mathematical Software (ICMS
+2016), Berlin, Germany, July 2016</li>
+<li><a href="pdf/lics15.pdf"><em>A Cubical Approach to Synthetic
+Homotopy Theory</em></a>, at <a
+href="http://lics.rwth-aachen.de/lics15/" class="secondarylink">LICS
+2015</a>, Kyoto, Japan, July 2015</li>
+<li><a href="pdf/talkJFLA.pdf"><em>Homotopy Type Theory</em></a>, at the
+conference “<a href="http://jfla.inria.fr/2014/"
+class="secondarylink">Journées francophones des languages
+applicatifs</a>”, Fréjus, France, January 2014</li>
+<li><a href="pdf/cmssm13.pdf"><em>An elementary definition of weak <span
+class="math inline">∞</span>-groupoids</em></a>, in the session “<a
+href="https://cms.math.ca/Events/summer13/sessions_scientific#pih"
+class="secondarylink">Progress in Higher Categories</a>” of the CMS
+Summer Meeting, Halifax, Nova-Scotia, Canada, June 2013</li>
+<li><a href="pdf/TheoremeDeCompletude.pdf"><em>Le théorème de complétude
+de Gödel</em></a> (in French), in the “Séminaire de mathématiques des
+élèves du lycée Louis le Grand”, Paris, France, February 2009</li>
 </ul>
 <h2 id="videos-of-talks">Videos of talks</h2>
 <ul>
-<li><a href="https://youtu.be/1ogUFFUfU_M"><em>Initiality for Martin-Löf type theory</em></a>, together with Peter Lumsdaine (my part starts at <a href="https://youtu.be/1ogUFFUfU_M?t=2165">36:05</a>), for the electronic seminar <a href="https://www.uwo.ca/math/faculty/kapulkin/seminars/hottest.html" class="secondarylink">HoTTEST</a>, September 2020</li>
-<li><a href="https://youtu.be/JEUvWyd1mTk"><em>Computer-generated proofs for the monoidal structure of the smash product</em></a>, for the electronic seminar <a href="https://www.uwo.ca/math/faculty/kapulkin/seminars/hottest.html" class="secondarylink">HoTTEST</a>, November 2018</li>
-<li><a href="https://video.ias.edu/postdoc/2017/0926-GuillaumeBrunerie"><em>Homotopy type theory: working invariantly in homotopy theory</em></a>, Short talks by postdoctoral members, School of Mathematics, IAS, Princeton, New Jersey, September 2017</li>
-<li><a href="https://video.ias.edu/shorttalks/2016/0928-GuillaumeBrunerie"><em>Invariant homotopy theory in the univalent foundations</em></a>, Short talks by postdoctoral members, School of Mathematics, IAS, Princeton, New Jersey, September 2016</li>
-<li><a href="http://www.fields.utoronto.ca/video-archive/2016/05/2012-15042"><em>The fourth homotopy group of the three-dimensional sphere</em></a>), at the “<a href="http://www.fields.utoronto.ca/activities/15-16/homotopy-type" class="secondarylink">Workshop on Homotopy Type Theory and Univalent Foundations of Mathematics</a>, Fields Institute, Toronto, Ontario, Canada, May 2016</li>
-<li><a href="https://video.ias.edu/univalent/1213/0411-HomotopyGroup"><em>Homotopy Theory in Type Theory</em></a>, with Dan Licata and Peter Lumsdaine, at the seminar of the Institute for Advanced Study, Princeton, New Jersey, April 2013</li>
-<li><a href="https://video.ias.edu/univalent/1213/0327-GuillaumeBrunerie"><em>The James construction and <span class="math inline"><em>π</em><sub>4</sub>(<em>S</em><sup>3</sup>)</span></em></a>, at the seminar of the special year of the IAS, Princeton, New Jersey, March 2013</li>
-<li><a href="https://video.ias.edu/univalent/1213/0220-GuillaumeBrunerie"><em><span class="math inline"><em>π</em><sub>2</sub>(<em>S</em><sup>2</sup>)</span> in HoTT</em></a>, at the seminar of the special year of the IAS, Princeton, New Jersey, February 2013</li>
-<li><a href="https://video.ias.edu/1213/univalent/0130-GuillaumeBrunerie"><em>Weak infinity-groupoids, part I</em></a> (no video for part II), at the seminar of the special year of the IAS, Princeton, New Jersey, January 2013</li>
+<li><a href="https://youtu.be/1ogUFFUfU_M"><em>Initiality for Martin-Löf
+type theory</em></a>, together with Peter Lumsdaine (my part starts at
+<a href="https://youtu.be/1ogUFFUfU_M?t=2165">36:05</a>), for the
+electronic seminar <a
+href="https://www.uwo.ca/math/faculty/kapulkin/seminars/hottest.html"
+class="secondarylink">HoTTEST</a>, September 2020</li>
+<li><a href="https://youtu.be/JEUvWyd1mTk"><em>Computer-generated proofs
+for the monoidal structure of the smash product</em></a>, for the
+electronic seminar <a
+href="https://www.uwo.ca/math/faculty/kapulkin/seminars/hottest.html"
+class="secondarylink">HoTTEST</a>, November 2018</li>
+<li><a
+href="https://video.ias.edu/postdoc/2017/0926-GuillaumeBrunerie"><em>Homotopy
+type theory: working invariantly in homotopy theory</em></a>, Short
+talks by postdoctoral members, School of Mathematics, IAS, Princeton,
+New Jersey, September 2017</li>
+<li><a
+href="https://video.ias.edu/shorttalks/2016/0928-GuillaumeBrunerie"><em>Invariant
+homotopy theory in the univalent foundations</em></a>, Short talks by
+postdoctoral members, School of Mathematics, IAS, Princeton, New Jersey,
+September 2016</li>
+<li><a
+href="http://www.fields.utoronto.ca/video-archive/2016/05/2012-15042"><em>The
+fourth homotopy group of the three-dimensional sphere</em></a>), at the
+“<a href="http://www.fields.utoronto.ca/activities/15-16/homotopy-type"
+class="secondarylink">Workshop on Homotopy Type Theory and Univalent
+Foundations of Mathematics</a>, Fields Institute, Toronto, Ontario,
+Canada, May 2016</li>
+<li><a
+href="https://video.ias.edu/univalent/1213/0411-HomotopyGroup"><em>Homotopy
+Theory in Type Theory</em></a>, with Dan Licata and Peter Lumsdaine, at
+the seminar of the Institute for Advanced Study, Princeton, New Jersey,
+April 2013</li>
+<li><a
+href="https://video.ias.edu/univalent/1213/0327-GuillaumeBrunerie"><em>The
+James construction and <span
+class="math inline"><em>π</em><sub>4</sub>(<em>S</em><sup>3</sup>)</span></em></a>,
+at the seminar of the special year of the IAS, Princeton, New Jersey,
+March 2013</li>
+<li><a
+href="https://video.ias.edu/univalent/1213/0220-GuillaumeBrunerie"><em><span
+class="math inline"><em>π</em><sub>2</sub>(<em>S</em><sup>2</sup>)</span>
+in HoTT</em></a>, at the seminar of the special year of the IAS,
+Princeton, New Jersey, February 2013</li>
+<li><a
+href="https://video.ias.edu/1213/univalent/0130-GuillaumeBrunerie"><em>Weak
+infinity-groupoids, part I</em></a> (no video for part II), at the
+seminar of the special year of the IAS, Princeton, New Jersey, January
+2013</li>
 </ul>
 <h2 id="others-writings">Others writings</h2>
 <ul>
-<li>A Python script generating Agda code for semi-simplicial types, truncated at any given level (<a href="other/semisimplicial.py">script</a>, <a href="other/semisimplicial10.txt">result for <span class="math inline"><em>n</em> = 10</span></a>)</li>
-<li><a href="pdf/TIPEvENS.pdf"><em>Structure topologique de l’espace des réseaux unitaires</em></a>, initiation to research on the proof that the space of unitary lattices of <span class="math inline">ℝ<sup>2</sup></span> is homemorphic to the complement of the trefoil knot in <span class="math inline"><em>S</em><sup>3</sup></span> (in French, 2009).</li>
-<li><a href="pdf/densdisigeblajspacoj.pdf"><em>Densdisigeblaj spacoj</em></a>, a proof of a theorem in point-set topology: every metric space without isolated points can be partitioned in two dense subspaces (in Esperanto, 2008).</li>
+<li>A Python script generating Agda code for semi-simplicial types,
+truncated at any given level (<a
+href="other/semisimplicial.py">script</a>, <a
+href="other/semisimplicial10.txt">result for <span
+class="math inline"><em>n</em> = 10</span></a>)</li>
+<li><a href="pdf/TIPEvENS.pdf"><em>Structure topologique de l’espace des
+réseaux unitaires</em></a>, initiation to research on the proof that the
+space of unitary lattices of <span
+class="math inline">ℝ<sup>2</sup></span> is homemorphic to the
+complement of the trefoil knot in <span
+class="math inline"><em>S</em><sup>3</sup></span> (in French,
+2009).</li>
+<li><a href="pdf/densdisigeblajspacoj.pdf"><em>Densdisigeblaj
+spacoj</em></a>, a proof of a theorem in point-set topology: every
+metric space without isolated points can be partitioned in two dense
+subspaces (in Esperanto, 2008).</li>
 </ul>
 </section>
 <section>
 <h1 id="contact">Contact</h1>
-<p>You can contact me by email at the address <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#x67;&#x75;&#x69;&#108;&#108;&#x61;&#x75;&#x6d;&#x65;&#46;&#98;&#114;&#x75;&#110;&#x65;&#114;&#x69;&#x65;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;" class="email">&#x67;&#x75;&#x69;&#108;&#108;&#x61;&#x75;&#x6d;&#x65;&#46;&#98;&#114;&#x75;&#110;&#x65;&#114;&#x69;&#x65;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a>. Note that I do not have the time or desire to referee academic papers anymore, no matter how interesting they are.</p>
+<p>You can contact me by email at the address
+<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#x67;&#x75;&#x69;&#108;&#108;&#x61;&#x75;&#x6d;&#x65;&#46;&#98;&#114;&#x75;&#110;&#x65;&#114;&#x69;&#x65;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;" class="email">&#x67;&#x75;&#x69;&#108;&#108;&#x61;&#x75;&#x6d;&#x65;&#46;&#98;&#114;&#x75;&#110;&#x65;&#114;&#x69;&#x65;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a>.</p>
 </section>
 </div>
 </body>
